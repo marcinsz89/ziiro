@@ -1,0 +1,9 @@
+Package: ziiro
+Version: @PROJECT_VERSION@~poc21
+Section: utils
+Priority: optional
+Architecture: arm64
+Depends: libc6 (>= 2.34), libstdc++6, python3 (>= 3.9), ca-certificates
+Maintainer: Ziiro local build <ziiro@localhost>
+Description: Offline amiibo backup browser for Cardputer Zero
+ Browse an offline metadata catalog and a library of locally supplied backups.

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Ziiro
+Comment=Browse your amiibo backup library
+Exec=/usr/bin/ziiro
+Icon=/usr/share/ziiro/ziiro-icon.png
+Terminal=false

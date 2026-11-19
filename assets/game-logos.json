@@ -1,0 +1,2460 @@
+{
+  "version": 1,
+  "titles": [
+    {
+      "platform": "3DS",
+      "title": "Ace Combat Assault Horizon Legacy+",
+      "ids": [
+        "0004000000064900",
+        "000400000006cc00",
+        "000400000015a300",
+        "000400000015c000"
+      ],
+      "launchbox": 143481,
+      "urls": [
+        "https://images.launchbox-app.com/68a5edc1-df8b-4692-b852-42891acde9ca.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Animal Crossing: Happy Home Designer",
+      "ids": [
+        "000400000014f100",
+        "000400000014f200"
+      ],
+      "launchbox": 30637,
+      "urls": [
+        "https://images.launchbox-app.com/cd34cf55-2a86-49f2-b17f-d0a49bd84700.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Animal Crossing: New Leaf",
+      "ids": [
+        "0004000000086300",
+        "0004000000086400",
+        "0004000000198e00",
+        "0004000000198f00"
+      ],
+      "launchbox": 17019,
+      "urls": [
+        "https://images.launchbox-app.com/847e65ec-5e3e-4833-95f0-57bb694b6ef9.png",
+        "https://images.launchbox-app.com/bc1f979b-775f-4320-b8ae-9c6e4f4297cf.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Azure Striker Gunvolt 2",
+      "ids": [
+        "00040000001a6e00"
+      ],
+      "launchbox": 144192,
+      "urls": [
+        "https://images.launchbox-app.com/23ce5143-82cb-40b3-b06f-e3b0dc12f191.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "BYE-BYE BOXBOY!",
+      "ids": [
+        "00040000001b5300",
+        "00040000001b5400"
+      ],
+      "launchbox": 135217,
+      "urls": [
+        "https://images.launchbox-app.com/53bb939f-ad16-4ca9-8ff9-5d8dc6602a48.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Captain Toad: Treasure Tracker",
+      "ids": [
+        "00040000001cb100",
+        "00040000001cb200"
+      ],
+      "launchbox": 155060,
+      "urls": [
+        "https://images.launchbox-app.com/568d2fc5-d38d-46cf-ab51-8a792a56c676.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Chibi-Robo! Zip Lash",
+      "ids": [
+        "0004000000162f00",
+        "0004000000163000"
+      ],
+      "launchbox": 34961,
+      "urls": [
+        "https://images.launchbox-app.com/6c790fa4-ca45-42b6-9437-70e0f8f51ca0.png",
+        "https://images.launchbox-app.com/r2_a0e80efc-c049-4666-b4f3-ce17227202c6.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Code Name: S.T.E.A.M.",
+      "ids": [
+        "0004000000132500"
+      ],
+      "launchbox": 27917,
+      "urls": [
+        "https://images.launchbox-app.com/fb7679d0-a484-443f-9e72-f39d1226f118.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Detective Pikachu",
+      "ids": [
+        "00040000001c1e00"
+      ],
+      "launchbox": 127993,
+      "urls": [
+        "https://images.launchbox-app.com/69a139d0-91f8-4cfc-96b1-6d26c38133e8.png",
+        "https://images.launchbox-app.com/r2_c2818df7-7d24-44c2-b1b1-889d2646593f.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Fire Emblem Echoes: Shadows of Valentia",
+      "ids": [
+        "00040000001b4000",
+        "00040000001b4100"
+      ],
+      "launchbox": 127947,
+      "urls": [
+        "https://images.launchbox-app.com/d9334aa0-6b25-4c50-87dd-0e8cb34fa16b.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Fire Emblem Fates",
+      "ids": [
+        "0004000000179400",
+        "0004000000179500",
+        "0004000000179600",
+        "0004000000179700",
+        "0004000000179800",
+        "000400000017a800"
+      ],
+      "launchbox": 111374,
+      "matched_platform": "Nintendo 3DS",
+      "artwork_name": "Fire Emblem Fates: Special Edition",
+      "urls": [
+        "https://images.launchbox-app.com/657ecb57-2879-4e02-84bb-44217a44f5d5.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Fire Emblem Warriors",
+      "ids": [
+        "000400000f70cc00",
+        "000400000f70cd00"
+      ],
+      "launchbox": 147533,
+      "urls": [
+        "https://images.launchbox-app.com/1be5f6d6-e517-4d48-9c80-fee242520f29.png",
+        "https://images.launchbox-app.com/58bc153f-ca15-4de7-b108-dc0fa4ddfd55.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Hey! Pikmin",
+      "ids": [
+        "00040000001a9200",
+        "00040000001af800",
+        "00040000001afa00",
+        "00040000001c5900"
+      ],
+      "launchbox": 132649,
+      "urls": [
+        "https://images.launchbox-app.com/c3c68ec5-a8db-4432-8cab-717a8a24838b.png",
+        "https://images.launchbox-app.com/r2_90afcb47-35bc-4b48-a6fa-f97ca9a72de8.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Hyrule Warriors Legends",
+      "ids": [
+        "000400000017ea00",
+        "000400000017eb00",
+        "0004000000193200",
+        "0004000000193400"
+      ],
+      "launchbox": 90938,
+      "source": "https://gamesdb.launchbox-app.com/games/images/40938-hyrule-warriors-legends",
+      "urls": [
+        "https://images.launchbox-app.com/c3152b6d-29d3-4154-85d0-81648387ae73.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Kirby Battle Royale",
+      "ids": [
+        "00040000001c2000",
+        "00040000001c2100"
+      ],
+      "launchbox": 142317,
+      "source": "https://gamesdb.launchbox-app.com/games/images/92317-kirby-battle-royale",
+      "urls": [
+        "https://images.launchbox-app.com/77fce2c1-d0eb-4be1-b3ba-5396d66450fe.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Kirby's Blowout Blast",
+      "ids": [
+        "0004000000196f00"
+      ],
+      "launchbox": 135119,
+      "urls": [
+        "https://images.launchbox-app.com/5e09964a-0804-4d4c-afc0-95885f0507e6.png",
+        "https://images.launchbox-app.com/52c30f98-c929-49d2-af23-8b157b379e1a.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Kirby's Extra Epic Yarn",
+      "ids": [
+        "00040000001d1e00",
+        "00040000001d1f00"
+      ],
+      "launchbox": 164534,
+      "urls": [
+        "https://images.launchbox-app.com/fc8e5550-e6ac-402f-aa2d-d55ecb385aa8.png",
+        "https://images.launchbox-app.com/3c6be008-433d-444a-a61a-4b6400e62c31.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Kirby: Planet Robobot",
+      "ids": [
+        "0004000000183600",
+        "0004000000189600",
+        "0004000000189800"
+      ],
+      "launchbox": 97268,
+      "urls": [
+        "https://images.launchbox-app.com/8333629e-f4a7-4276-82b0-104c035d9dfc.png",
+        "https://images.launchbox-app.com/r2_0e4008d4-cf21-4b5a-b606-81c4c94363b0.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Luigi's Mansion",
+      "ids": [
+        "0004000000055f00",
+        "0004000000076500",
+        "00040000000d0000",
+        "00040000001d1900",
+        "00040000001d1a00"
+      ],
+      "launchbox": 156367,
+      "urls": [
+        "https://images.launchbox-app.com/68093138-4352-4e08-9ef9-20fde35b8cbe.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario & Luigi: Bowser's Inside Story + Bowser Jr.'s Journey",
+      "ids": [
+        "00040000001d1400",
+        "00040000001d1500"
+      ],
+      "launchbox": 162861,
+      "urls": [
+        "https://images.launchbox-app.com/ddc6bbae-6cd1-4160-991b-e6bd5cf2721b.png",
+        "https://images.launchbox-app.com/6cfdd069-0965-483b-9467-76ba6696d70a.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario & Luigi: Paper Jam",
+      "ids": [
+        "0004000000132700",
+        "0004000000132800",
+        "000400000018a100"
+      ],
+      "launchbox": 34539,
+      "urls": [
+        "https://images.launchbox-app.com/ffc0b41c-7746-40e0-95a9-95ccdb097596.png",
+        "https://images.launchbox-app.com/f480c274-51b8-4392-a247-9fae9da90823.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario & Luigi: Superstar Saga + Bowser's Minions",
+      "ids": [
+        "00040000001b8f00",
+        "00040000001b9000"
+      ],
+      "launchbox": 137848,
+      "urls": [
+        "https://images.launchbox-app.com/7910fb0f-9557-4df3-b8e0-752b8507a6fc.png",
+        "https://images.launchbox-app.com/2606b95b-e5cd-4e59-8724-c26e7b11e7d7.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario & Sonic at the Rio 2016 Olympic Games",
+      "ids": [
+        "000400000017e200",
+        "000400000017e300",
+        "0004000000192400"
+      ],
+      "launchbox": 124014,
+      "urls": [
+        "https://images.launchbox-app.com/e64a4da0-d249-4312-8605-67ac679f9194.png",
+        "https://images.launchbox-app.com/4cdad25e-658b-49dd-a26e-8b9aa163ac26.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario Party: Star Rush",
+      "ids": [
+        "0004000000193900",
+        "000400000019bd00",
+        "000400000019be00"
+      ],
+      "launchbox": 122366,
+      "source": "https://gamesdb.launchbox-app.com/games/images/72366-mario-party-star-rush",
+      "urls": [
+        "https://images.launchbox-app.com/4eb8e12c-a7df-4331-9ae5-f75c43370e36.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario Party: The Top 100",
+      "ids": [
+        "00040000001c4d00",
+        "00040000001c4e00"
+      ],
+      "launchbox": 139637,
+      "urls": [
+        "https://images.launchbox-app.com/efd4a61e-a8f8-4ed9-a285-5a086a3206f2.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mario Sports Superstars",
+      "ids": [
+        "0004000000188b00",
+        "0004000000188c00",
+        "0004000000188d00"
+      ],
+      "launchbox": 127204,
+      "urls": [
+        "https://images.launchbox-app.com/44750eb3-df00-438f-b3d4-21d00794ecdc.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mega Man Legacy Collection",
+      "ids": [
+        "0004000000174100"
+      ],
+      "launchbox": 93944,
+      "urls": [
+        "https://images.launchbox-app.com/27a68ff7-f881-4b3b-a94a-ece0bc07981b.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Metroid Prime: Blast Ball",
+      "ids": [
+        "0004000000175300"
+      ],
+      "launchbox": 142315,
+      "urls": [
+        "https://images.launchbox-app.com/858a589f-dd2d-4897-b91f-d81f04a6ff8e.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Metroid Prime: Federation Force",
+      "ids": [
+        "000400000016ce00",
+        "000400000016e300",
+        "0004000000175200"
+      ],
+      "launchbox": 35013,
+      "urls": [
+        "https://images.launchbox-app.com/ef1173ee-14bc-4541-ad3f-910b8462044a.png",
+        "https://images.launchbox-app.com/r2_7bdec6ee-9e5a-4242-a948-7abe1ad94fb0.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Metroid: Samus Returns",
+      "ids": [
+        "00040000001bb200",
+        "00040000001bfb00",
+        "00040000001bfc00"
+      ],
+      "launchbox": 136600,
+      "urls": [
+        "https://images.launchbox-app.com/r2_07a051d6-4cea-44a7-8187-92424a82a100.png",
+        "https://images.launchbox-app.com/r2_bb0c369c-f143-4897-b1bf-5dd394e47991.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Miitopia",
+      "ids": [
+        "0004000000178800",
+        "00040000001b4e00",
+        "00040000001b4f00"
+      ],
+      "launchbox": 147843,
+      "urls": [
+        "https://images.launchbox-app.com/0bbd2231-fde8-4e81-9600-946f8a17aa94.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Mini Mario & Friends amiibo Challenge",
+      "ids": [
+        "000400000016c200",
+        "000400000016c300"
+      ],
+      "launchbox": 148031,
+      "urls": [
+        "https://images.launchbox-app.com/0679e29a-79e3-4bdd-91d0-10240086eac6.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Monster Hunter Stories",
+      "ids": [
+        "000400000016e100",
+        "00040000001bc500",
+        "00040000001bc600"
+      ],
+      "launchbox": 131640,
+      "urls": [
+        "https://images.launchbox-app.com/e8fd3d1a-0af6-4bf7-86f8-478e0e02f4e8.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "One Piece: Super Grand Battle! X",
+      "ids": [
+        "0004000000144400"
+      ],
+      "launchbox": 154879,
+      "urls": [
+        "https://images.launchbox-app.com/0e9a6f20-4d18-4746-b134-f17e4e5be86d.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Picross 3D Round 2",
+      "ids": [
+        "0004000000187e00"
+      ],
+      "launchbox": 132772,
+      "urls": [
+        "https://images.launchbox-app.com/14de0637-ed26-4f1d-a759-58d6e3f9d413.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Shovel Knight",
+      "ids": [
+        "0004000000119a00",
+        "000400000012cb00",
+        "000400000017c900",
+        "000400000017e100",
+        "0004000000196900"
+      ],
+      "launchbox": 22516,
+      "urls": [
+        "https://images.launchbox-app.com/1dc149f8-426e-40ff-8ccc-b3a213bf2aa6.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Style Savvy: Fashion Forward",
+      "ids": [
+        "0004000000196500"
+      ],
+      "launchbox": 34018,
+      "urls": [
+        "https://images.launchbox-app.com/r2_bad6620d-a9c6-4b2e-86f4-0b4199553b54.png",
+        "https://images.launchbox-app.com/d028cc64-5389-482a-8ef6-4e32b1f86077.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Style Savvy: Styling Star",
+      "ids": [
+        "00040000001c2500"
+      ],
+      "launchbox": 179334,
+      "urls": [
+        "https://images.launchbox-app.com/3b53cb87-eb08-4617-801b-732d542f9393.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Super Smash Bros. for Nintendo 3DS",
+      "ids": [
+        "00040000000edf00",
+        "00040000000ee000"
+      ],
+      "launchbox": 23464,
+      "urls": [
+        "https://images.launchbox-app.com/0a00f3b3-a16d-418e-ac76-f4a8a9f8134c.png",
+        "https://images.launchbox-app.com/r2_4a423eea-a552-4345-b7b7-e1908177fefe.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Team Kirby Clash Deluxe",
+      "ids": [
+        "00040000001ab800",
+        "00040000001ab900"
+      ],
+      "launchbox": 127943,
+      "urls": [
+        "https://images.launchbox-app.com/ad3f27b1-5591-40fd-89bd-196532be99ae.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "WarioWare Gold",
+      "ids": [
+        "00040000001d1c00"
+      ],
+      "launchbox": 154787,
+      "urls": [
+        "https://images.launchbox-app.com/27aaba61-41c2-4448-bd42-71f024d64771.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Xenoblade Chronicles 3D",
+      "ids": [
+        "000400000f700100",
+        "000400000f700200"
+      ],
+      "launchbox": 27918,
+      "urls": [
+        "https://images.launchbox-app.com/r2_1593e39a-ec30-4718-a208-589baabc0ddb.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "Yoshi's Woolly World",
+      "ids": [
+        "00040000001a4100",
+        "00040000001a4200",
+        "00040000001b6c00",
+        "00040000001b6d00"
+      ],
+      "launchbox": 22650,
+      "urls": [
+        "https://images.launchbox-app.com/8bf84782-0623-47f9-9789-c034a58bbdc7.png",
+        "https://images.launchbox-app.com/ec9cdfd1-9ef9-405e-8772-9dbd8acee270.png"
+      ]
+    },
+    {
+      "platform": "3DS",
+      "title": "niconico app",
+      "ids": [
+        "0005000010116400"
+      ],
+      "artwork_name": "Niconico (Re) service logo",
+      "source": "https://commons.wikimedia.org/wiki/File:Niconico(Re).png",
+      "license": "Public domain text logo, trademarked",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/Niconico%28Re%29.png/250px-Niconico%28Re%29.png",
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Niconico%28Re%29.svg/250px-Niconico%28Re%29.svg.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Animal Crossing: New Horizons",
+      "ids": [
+        "01006f8002326000"
+      ],
+      "launchbox": 166313,
+      "urls": [
+        "https://images.launchbox-app.com/d051e914-58aa-462f-9c0c-9d013ab72c87.png",
+        "https://images.launchbox-app.com/r2_7f434073-21b3-44b7-bfaa-6f32e8f36554.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Azure Striker Gunvolt: Striker Pack",
+      "ids": [
+        "0100192003fa4000"
+      ],
+      "launchbox": 141388,
+      "urls": [
+        "https://images.launchbox-app.com/249115b9-62e3-44bb-ab82-3e02b50966e3.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Bayonetta 2",
+      "ids": [
+        "01007960049a0000"
+      ],
+      "launchbox": 145451,
+      "urls": [
+        "https://images.launchbox-app.com/27fed045-b8c7-48e6-a414-6341f7450e08.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Captain Toad: Treasure Tracker",
+      "ids": [
+        "01009bf0072d4000"
+      ],
+      "launchbox": 153436,
+      "urls": [
+        "https://images.launchbox-app.com/696df04d-4d27-45a4-9654-8ed37dfb6725.png",
+        "https://images.launchbox-app.com/c743c664-01e7-4578-b2d5-7e45eefd73f7.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Conga Master Party!",
+      "ids": [
+        "01007ef00399c000"
+      ],
+      "launchbox": 418245,
+      "matched_platform": "Windows",
+      "artwork_name": "Conga Master",
+      "source": "https://www.nintendo.com/us/store/products/70010000000414/",
+      "urls": [
+        "https://images.launchbox-app.com/6d875584-2672-4c13-b1f0-eace639bb3cd.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Cyber Shadow",
+      "ids": [
+        "01008d100de46000"
+      ],
+      "launchbox": 173608,
+      "urls": [
+        "https://images.launchbox-app.com/e10dfaab-9e28-455d-8ff4-c5363196cbf6.png",
+        "https://images.launchbox-app.com/ee47fb6a-0640-4d80-a415-0cd349192f71.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Dark Souls: Remastered",
+      "ids": [
+        "01004ab00a260000"
+      ],
+      "launchbox": 151116,
+      "urls": [
+        "https://images.launchbox-app.com/01d6bd3d-4897-4455-970f-dbefe6871de3.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Diablo III: Eternal Collection",
+      "ids": [
+        "01001b300b9be000"
+      ],
+      "launchbox": 162533,
+      "urls": [
+        "https://images.launchbox-app.com/36c717b5-1739-430b-982b-8fa816dc60e4.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Fire Emblem Engage",
+      "ids": [
+        "0100a6301214e000"
+      ],
+      "launchbox": 218754,
+      "urls": [
+        "https://images.launchbox-app.com/8006b67e-477a-4348-b913-11c008a1b8f0.png",
+        "https://images.launchbox-app.com/25946efd-b30b-4323-ac16-2e5b7aebfcec.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Fire Emblem Warriors",
+      "ids": [
+        "0100f15003e64000"
+      ],
+      "launchbox": 135254,
+      "urls": [
+        "https://images.launchbox-app.com/8f41c87c-4edc-40a6-9788-6bef79f48473.png",
+        "https://images.launchbox-app.com/de275dc2-d78b-4812-a599-cf7b9fd794f5.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Fire Emblem Warriors: Three Hopes",
+      "ids": [
+        "010071f0143ea000"
+      ],
+      "launchbox": 209309,
+      "urls": [
+        "https://images.launchbox-app.com/a8f3c4e3-273f-4f7a-b70e-1907406f89da.png",
+        "https://images.launchbox-app.com/r2_d3c8202e-3e4c-42bd-9e32-0db88ed6ea1e.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Fire Emblem: Three Houses",
+      "ids": [
+        "010055d009f78000"
+      ],
+      "launchbox": 167709,
+      "urls": [
+        "https://images.launchbox-app.com/78208a6f-860f-4a25-bd34-9b59f02c31c0.png",
+        "https://images.launchbox-app.com/dbb58680-a1f8-4a6e-bd6a-ece486979ad8.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Hello, Mario!",
+      "ids": [
+        "01007fe0221d8000"
+      ],
+      "launchbox": 469669,
+      "urls": [
+        "https://images.launchbox-app.com/1b0ae193-bbe1-4cce-9d9d-1fc4e2370c91.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Hello, Yoshi!",
+      "ids": [
+        "0100d060251aa000"
+      ],
+      "launchbox": 474606,
+      "urls": [
+        "https://images.launchbox-app.com/4585015f-4afc-4dfa-89a5-9f1834781ddf.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Hyrule Warriors: Age of Calamity",
+      "ids": [
+        "01002b00111a2000"
+      ],
+      "launchbox": 189846,
+      "urls": [
+        "https://images.launchbox-app.com/2948970d-4d23-4b73-adbc-009ee839504b.png",
+        "https://images.launchbox-app.com/2479af83-4329-4d39-8876-87b56e7be1e8.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Hyrule Warriors: Definitive Edition",
+      "ids": [
+        "0100ae00096ea000"
+      ],
+      "launchbox": 148036,
+      "urls": [
+        "https://images.launchbox-app.com/8c60a2f1-2d78-4271-8621-1885bfa800f2.png",
+        "https://images.launchbox-app.com/5a32c438-df7b-4eb3-9491-988df08f5d6a.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Jikkyou Powerful Pro Baseball",
+      "ids": [
+        "0100e9c00bf28000"
+      ],
+      "artwork_name": "Jikkyou Pawafuru Puroyakyuu",
+      "source": "https://www.konami.com/pawa/switch/",
+      "license": "Konami official site",
+      "urls": [
+        "https://img.konami.com/pawa/switch/s/images/logo_pawa_switch.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Just Shapes & Beats",
+      "ids": [
+        "0100830008426000"
+      ],
+      "launchbox": 168508,
+      "urls": [
+        "https://images.launchbox-app.com/e1e217a1-bac9-4cd6-8bb9-33075a72fd7c.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Kirby Star Allies",
+      "ids": [
+        "01007e3006dda000"
+      ],
+      "launchbox": 146622,
+      "urls": [
+        "https://images.launchbox-app.com/91cd86b9-48e4-41b5-9cd5-aa350bffc5f0.png",
+        "https://images.launchbox-app.com/115e6c48-b9be-48e3-98f3-34647452730f.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Kirby and the Forgotten Land",
+      "ids": [
+        "01004d300c5ae000"
+      ],
+      "launchbox": 205485,
+      "urls": [
+        "https://images.launchbox-app.com/21167621-d2d9-4dd0-9bba-dfc32a484be5.png",
+        "https://images.launchbox-app.com/f1d38f5c-a418-40bf-83e9-0148d4a2a524.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Kirby's Return to Dream Land Deluxe",
+      "ids": [
+        "01006b601380e000"
+      ],
+      "launchbox": 215520,
+      "urls": [
+        "https://images.launchbox-app.com/3d996879-ccd6-461e-b122-3059e28e75ba.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Little Nightmares: Complete Edition",
+      "ids": [
+        "01002fc00412c000"
+      ],
+      "launchbox": 151301,
+      "urls": [
+        "https://images.launchbox-app.com/09acd231-d5ee-47e4-aaea-fdf644f2a406.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Mario + Rabbids: Kingdom Battle",
+      "ids": [
+        "010067300059a000"
+      ],
+      "launchbox": 132685,
+      "source": "https://gamesdb.launchbox-app.com/games/images/82685-mario-rabbids-kingdom-battle",
+      "urls": [
+        "https://images.launchbox-app.com/75cc72b1-52a2-4822-97d7-ad8834e7395d.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Mario Kart 8 Deluxe",
+      "ids": [
+        "0100152000022000"
+      ],
+      "launchbox": 129188,
+      "urls": [
+        "https://images.launchbox-app.com/9e955cbc-6147-49f4-b2fe-a68dd6bbb5a7.png",
+        "https://images.launchbox-app.com/811bdea4-43c0-41e7-97fd-30ef9e0a9d68.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Mega Man 11",
+      "ids": [
+        "0100b0c0086b0000"
+      ],
+      "launchbox": 156200,
+      "urls": [
+        "https://images.launchbox-app.com/5a243053-9609-47ec-9724-0ec7b1fdba6c.png",
+        "https://images.launchbox-app.com/88a5d115-865b-4a79-81b4-10d16397c21c.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Mega Man Legacy Collection",
+      "ids": [
+        "01002d4007ae0000"
+      ],
+      "launchbox": 163030,
+      "urls": [
+        "https://images.launchbox-app.com/5b7b22c6-322e-4d25-85b8-2a65c10cd7a4.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Mega Man Legacy Collection 2",
+      "ids": [
+        "0100842008ec4000"
+      ],
+      "launchbox": 163032,
+      "urls": [
+        "https://images.launchbox-app.com/b44b5bd5-0ad1-44f8-813e-5bcd6780d4a7.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Metroid Dread",
+      "ids": [
+        "010093801237c000"
+      ],
+      "launchbox": 202670,
+      "urls": [
+        "https://images.launchbox-app.com/15a593e0-e042-40e1-98fe-86933adb8328.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Metroid Prime 4: Beyond",
+      "ids": [
+        "010019a01e2f2000"
+      ],
+      "launchbox": 215522,
+      "urls": [
+        "https://images.launchbox-app.com/r2_519b04b3-9f4b-4b70-a545-c08acccd332c.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Miitopia",
+      "ids": [
+        "01003da010e8a000"
+      ],
+      "launchbox": 201958,
+      "urls": [
+        "https://images.launchbox-app.com/83cbc525-75a1-4bd7-8c5e-d3d5e1bf749c.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Monster Hunter Rise",
+      "ids": [
+        "0100b04011742000"
+      ],
+      "launchbox": 192367,
+      "urls": [
+        "https://images.launchbox-app.com/06f9a10f-a84e-436b-a715-604694c3423b.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Monster Hunter Stories",
+      "ids": [
+        "010069301b1d4000"
+      ],
+      "launchbox": 451611,
+      "urls": [
+        "https://images.launchbox-app.com/188139dc-ea8b-4fee-b9f7-ed9f84dd23f3.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Monster Hunter Stories 2: Wings of Ruin",
+      "ids": [
+        "0100e21011446000"
+      ],
+      "launchbox": 202685,
+      "urls": [
+        "https://images.launchbox-app.com/50d51d5a-74a8-46e6-b284-8654b951bc18.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Resident Evil Revelations",
+      "ids": [
+        "0100643002136000"
+      ],
+      "launchbox": 163020,
+      "urls": [
+        "https://images.launchbox-app.com/514a83f6-36b9-4e41-8115-f52ac8e1e78d.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Resident Evil Revelations 2",
+      "ids": [
+        "010095300212a000"
+      ],
+      "launchbox": 164618,
+      "urls": [
+        "https://images.launchbox-app.com/2e88d2b6-c0d9-4cb1-8db1-e5ef9f016174.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Shovel Knight",
+      "ids": [
+        "010057d0021e8000"
+      ],
+      "launchbox": 142266,
+      "matched_platform": "Nintendo Switch",
+      "artwork_name": "Shovel Knight: Treasure Trove",
+      "source": "https://www.yachtclubgames.com/blog/shovel-knight-update-notes/",
+      "urls": [
+        "https://images.launchbox-app.com/679f2981-8674-4a3e-adb2-8e3de4106d3f.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Shovel Knight Dig",
+      "ids": [
+        "0100b62017e68000"
+      ],
+      "launchbox": 217449,
+      "urls": [
+        "https://images.launchbox-app.com/329461e0-68ee-41d1-9bf6-87543c6a22c4.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Shovel Knight Pocket Dungeon",
+      "ids": [
+        "01006b00126ec000"
+      ],
+      "launchbox": 207348,
+      "urls": [
+        "https://images.launchbox-app.com/283c9e67-d6ac-4d3e-8b6d-f305443ab2f5.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Shovel Knight Showdown",
+      "ids": [
+        "0100b380022ae000"
+      ],
+      "launchbox": 186962,
+      "urls": [
+        "https://images.launchbox-app.com/770cde3c-c009-4fb8-a9b7-67d059703863.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Splatoon 2",
+      "ids": [
+        "01003bc0000a0000"
+      ],
+      "launchbox": 132678,
+      "urls": [
+        "https://images.launchbox-app.com/159ba5a8-3d7c-419b-b6b5-d2a619d95891.png",
+        "https://images.launchbox-app.com/21913468-ea20-4ce2-809f-188f66ce5b23.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Splatoon 3",
+      "ids": [
+        "0100c2500fc20000"
+      ],
+      "launchbox": 202708,
+      "urls": [
+        "https://images.launchbox-app.com/07e67135-aeb7-468e-a957-7447b65a7008.png",
+        "https://images.launchbox-app.com/1f7e677e-c975-4a6b-ac86-0e47f093cfe0.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Kirby Clash",
+      "ids": [
+        "01003fb00c5a8000"
+      ],
+      "launchbox": 180330,
+      "urls": [
+        "https://images.launchbox-app.com/d5ee6a96-078a-4915-804d-7d0acc65d239.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario 3D World + Bowser's Fury",
+      "ids": [
+        "010028600ebda000"
+      ],
+      "launchbox": 195306,
+      "urls": [
+        "https://images.launchbox-app.com/d295ac1b-54ce-46fe-90b0-476ee7f6d468.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario Bros. Wonder",
+      "ids": [
+        "010015100b514000"
+      ],
+      "launchbox": 421985,
+      "urls": [
+        "https://images.launchbox-app.com/bf43ccf2-1730-456d-bb08-55d1ada67163.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario Galaxy",
+      "ids": [
+        "010099c022b96000"
+      ],
+      "launchbox": 462052,
+      "urls": [
+        "https://images.launchbox-app.com/4079ef9d-c272-4fbf-bbb1-7d63c0866b0e.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario Galaxy 2",
+      "ids": [
+        "0100fd8022daa000"
+      ],
+      "launchbox": 163727,
+      "matched_platform": "Nintendo Wii",
+      "artwork_name": "Super Mario Galaxy 2",
+      "urls": [
+        "https://images.launchbox-app.com/r2_9fdb85e6-d2b4-450c-acd9-17e7a44f3b2a.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario Odyssey",
+      "ids": [
+        "0100000000010000"
+      ],
+      "launchbox": 136132,
+      "urls": [
+        "https://images.launchbox-app.com/d6501a8a-2c69-4021-9e52-f25175a5c48d.png",
+        "https://images.launchbox-app.com/ca1e23d7-9c6c-4820-8cc2-5ac96e3acc5c.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Mario Party",
+      "ids": [
+        "010036b0034e4000"
+      ],
+      "launchbox": 156264,
+      "urls": [
+        "https://images.launchbox-app.com/168f7388-dc26-46d3-8dfe-af97273d5287.png",
+        "https://images.launchbox-app.com/88aefb19-2b37-4013-b986-cd767333477a.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Super Smash Bros. Ultimate",
+      "ids": [
+        "01006a800016e000"
+      ],
+      "launchbox": 158007,
+      "urls": [
+        "https://images.launchbox-app.com/c4518044-3ce7-49cf-8554-8d1399063599.png",
+        "https://images.launchbox-app.com/9d11bc7e-fce6-4181-9a04-1db9342c1491.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Elder Scrolls V: Skyrim",
+      "ids": [
+        "01000a10041ea000"
+      ],
+      "launchbox": 157470,
+      "urls": [
+        "https://images.launchbox-app.com/00e6cc5c-6c18-473b-a052-6c047b4d4b45.png",
+        "https://images.launchbox-app.com/b1943cf3-c607-489c-aa98-c2564f89c3d3.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "ids": [
+        "01007ef00011e000"
+      ],
+      "launchbox": 129189,
+      "source": "https://gamesdb.launchbox-app.com/games/images/79189-the-legend-of-zelda-breath-of-the-wild",
+      "urls": [
+        "https://images.launchbox-app.com/ec6bdc37-6d00-4164-ae47-00e39888e69a.png",
+        "https://images.launchbox-app.com/dfae9660-f0d5-42c0-9ddc-952894ae5ab8.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Legend of Zelda: Echoes of Wisdom",
+      "ids": [
+        "01008cf01baac000"
+      ],
+      "launchbox": 451312,
+      "urls": [
+        "https://images.launchbox-app.com/165c56ae-d065-459a-ba01-6f3c3a145b8f.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Legend of Zelda: Link's Awakening",
+      "ids": [
+        "01006bb00c6f0000"
+      ],
+      "launchbox": 168410,
+      "urls": [
+        "https://images.launchbox-app.com/1915c69c-98c4-4c14-ab84-e4934b35f778.png",
+        "https://images.launchbox-app.com/56a69522-5a06-4529-95d2-88f73cdeb332.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Legend of Zelda: Skyward Sword HD",
+      "ids": [
+        "01002da013484000"
+      ],
+      "launchbox": 199647,
+      "urls": [
+        "https://images.launchbox-app.com/38aeb63d-d794-441f-bfc3-6fe1afaa49e2.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "The Legend of Zelda: Tears of the Kingdom",
+      "ids": [
+        "0100f2c0115b6000"
+      ],
+      "launchbox": 215519,
+      "urls": [
+        "https://images.launchbox-app.com/38d0eb1c-c717-4674-8152-28a10e877b85.png",
+        "https://images.launchbox-app.com/bfec38ea-781c-439f-96a0-80ffe25a7a3f.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Xenoblade Chronicles 3",
+      "ids": [
+        "010074f013262000"
+      ],
+      "launchbox": 213371,
+      "urls": [
+        "https://images.launchbox-app.com/3a1987ac-2b20-498c-a9e6-501ff49b9a1a.png",
+        "https://images.launchbox-app.com/3c2c8200-b006-4795-9e89-9788f35e57ff.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Yoshi's Crafted World",
+      "ids": [
+        "01006000040c2000"
+      ],
+      "launchbox": 163407,
+      "urls": [
+        "https://images.launchbox-app.com/052222c1-4a3f-466a-9b36-2e589d175d6d.png",
+        "https://images.launchbox-app.com/285f0f87-95fd-4d5a-b479-d827a838c537.png"
+      ]
+    },
+    {
+      "platform": "Switch",
+      "title": "Yu-Gi-Oh! RUSH DUEL: Dawn of the Battle Royale!!",
+      "ids": [
+        "0100261015be2000"
+      ],
+      "launchbox": 204396,
+      "urls": [
+        "https://images.launchbox-app.com/480ec670-ae0f-4a77-85fc-fac3fc9254b3.png",
+        "https://images.launchbox-app.com/937f1b4a-f4ca-443d-b38a-e0a125e48763.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Animal Crossing: New Horizons – Nintendo Switch 2 Edition",
+      "ids": [
+        "01006f8002326000"
+      ],
+      "launchbox": 462720,
+      "urls": [
+        "https://images.launchbox-app.com/255e9662-2e66-40bb-b70a-dfdd70f99d5e.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Donkey Kong Bananza",
+      "ids": [
+        "040074a01bf12000"
+      ],
+      "launchbox": 458703,
+      "urls": [
+        "https://images.launchbox-app.com/6545113a-7091-434e-85cc-4f82dba38bb4.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Hyrule Warriors: Age of Imprisonment",
+      "ids": [
+        "04003f40232de000"
+      ],
+      "launchbox": 462322,
+      "urls": [
+        "https://images.launchbox-app.com/1e4c84d3-2a31-4246-bcde-2eebb4b5f854.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Kirby Air Riders",
+      "ids": [
+        "040077201be50000"
+      ],
+      "launchbox": 464212,
+      "urls": [
+        "https://images.launchbox-app.com/733327a2-0c95-49f2-b229-230676acf504.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Kirby and the Forgotten Land – Nintendo Switch 2 Edition + Star-Crossed World",
+      "ids": [
+        "01004d300c5ae000"
+      ],
+      "launchbox": 458705,
+      "urls": [
+        "https://images.launchbox-app.com/67af29f0-1079-4303-b1ff-00c8fb6b18e1.png",
+        "https://images.launchbox-app.com/r2_cf218a76-c49d-47a3-831d-61f3f75e8e7d.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Mario Tennis Fever",
+      "ids": [
+        "0400d4201c6ea000"
+      ],
+      "launchbox": 467620,
+      "urls": [
+        "https://images.launchbox-app.com/e70b6e0e-dbaa-4e91-abe2-ec64882d31fd.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Metroid Prime 4: Beyond – Nintendo Switch 2 Edition",
+      "ids": [
+        "010019a01e2f2000"
+      ],
+      "launchbox": 464211,
+      "urls": [
+        "https://images.launchbox-app.com/af9487fd-a5bd-4b15-b422-27ca2df92d17.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Monster Hunter Stories 3: Twisted Reflection",
+      "ids": [
+        "0400d1e0237cc000"
+      ],
+      "launchbox": 470606,
+      "matched_platform": "Windows",
+      "matched_title": "Monster Hunter Stories 3: Twisted Reflection",
+      "urls": [
+        "https://images.launchbox-app.com/a7c41e6d-5500-48c5-b176-a39999532e17.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Pragmata",
+      "ids": [
+        "0400c76024710000"
+      ],
+      "launchbox": 474818,
+      "matched_platform": "Sony Playstation 5",
+      "matched_title": "PRAGMATA",
+      "urls": [
+        "https://images.launchbox-app.com/46889dc6-fc40-491a-9e16-08de6da48489.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Resident Evil Requiem",
+      "ids": [
+        "0400a58024718000"
+      ],
+      "launchbox": 462171,
+      "matched_platform": "Windows",
+      "matched_title": "Resident Evil Requiem",
+      "urls": [
+        "https://images.launchbox-app.com/87655f1b-1c5a-41e5-a422-93809facde4b.png",
+        "https://images.launchbox-app.com/r2_20f88bf2-3a65-45a9-921e-79c212ff0c37.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Splatoon Raiders",
+      "ids": [
+        "0400380020056000"
+      ],
+      "launchbox": 458259,
+      "urls": [
+        "https://images.launchbox-app.com/r2_2f52c97f-d1cd-492d-b24b-ae6619d41f99.png",
+        "https://images.launchbox-app.com/r2_6edb4cb8-c1d7-4fad-8730-2e3b49839033.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Star Fox",
+      "ids": [
+        "0400e88025b1a000"
+      ],
+      "launchbox": 472304,
+      "urls": [
+        "https://images.launchbox-app.com/r2_d46151a9-387e-4ee1-920c-ea2483cd4f90.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Street Fighter 6",
+      "ids": [
+        "040078001ccf6000"
+      ],
+      "launchbox": 420095,
+      "matched_platform": "Sony Playstation 5",
+      "matched_title": "Street Fighter 6",
+      "urls": [
+        "https://images.launchbox-app.com/a608edfb-301f-42b0-a69f-e682d5b668c6.png",
+        "https://images.launchbox-app.com/a8c0a8f5-24c7-4448-959b-b43f48599b38.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Super Mario Bros. Wonder – Nintendo Switch 2 Edition + Meetup in Bellabel Park",
+      "ids": [
+        "010015100b514000"
+      ],
+      "launchbox": 467535,
+      "urls": [
+        "https://images.launchbox-app.com/r2_26023243-f95a-4534-a178-f1a34b6bcd3f.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "The Elder Scrolls V: Skyrim Anniversary Edition",
+      "ids": [
+        "04008c6024bb4000"
+      ],
+      "launchbox": 206825,
+      "matched_platform": "Windows",
+      "matched_title": "The Elder Scrolls V: Skyrim Anniversary Edition",
+      "urls": [
+        "https://images.launchbox-app.com/873767cc-40e3-42b9-b408-bfdd0ef42524.png",
+        "https://images.launchbox-app.com/r2_db1dad62-4242-4deb-a3a1-44344309cfbd.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "The Legend of Zelda: Breath of the Wild – Nintendo Switch 2 Edition",
+      "ids": [
+        "01007ef00011e000"
+      ],
+      "launchbox": 458257,
+      "urls": [
+        "https://images.launchbox-app.com/b45df1e3-a82a-47c4-8f38-113f27c7433d.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "The Legend of Zelda: Tears of the Kingdom – Nintendo Switch 2 Edition",
+      "ids": [
+        "0100f2c0115b6000"
+      ],
+      "launchbox": 215519,
+      "matched_platform": "Nintendo Switch",
+      "artwork_name": "The Legend of Zelda: Tears of the Kingdom",
+      "urls": [
+        "https://images.launchbox-app.com/38d0eb1c-c717-4674-8152-28a10e877b85.png",
+        "https://images.launchbox-app.com/bfec38ea-781c-439f-96a0-80ffe25a7a3f.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Xenoblade Chronicles: Definitive Edition – Nintendo Switch 2 Edition",
+      "ids": [
+        "0100ff500e34a000"
+      ],
+      "launchbox": 180288,
+      "matched_platform": "Nintendo Switch",
+      "matched_title": "Xenoblade Chronicles: Definitive Edition",
+      "note": "Uses same underlying Definitive Edition logo.",
+      "urls": [
+        "https://images.launchbox-app.com/8ece2175-2b21-4af4-bc3b-7c9b1bf0d49f.png",
+        "https://images.launchbox-app.com/b2bd6584-a897-4b21-9880-3270bf8bcdff.png"
+      ]
+    },
+    {
+      "platform": "Switch 2",
+      "title": "Yoshi and the Mysterious Book",
+      "ids": [
+        "0400245021d2c000"
+      ],
+      "launchbox": 471900,
+      "urls": [
+        "https://images.launchbox-app.com/r2_5d5fb6dd-6652-4aa8-ad74-31a777a5189b.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Animal Crossing: amiibo Festival",
+      "ids": [
+        "0005000010190100",
+        "00050000101c6400",
+        "00050000101c6500"
+      ],
+      "launchbox": 32901,
+      "urls": [
+        "https://images.launchbox-app.com/0b6d2736-84dd-46a4-a789-099469f2a79b.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Captain Toad: Treasure Tracker",
+      "ids": [
+        "0005000010180500",
+        "0005000010180600",
+        "0005000010180700"
+      ],
+      "launchbox": 23465,
+      "urls": [
+        "https://images.launchbox-app.com/0a318ec5-04cb-41c0-a660-c4c0bd0ed12e.png",
+        "https://images.launchbox-app.com/54ecff6b-020a-42ad-950b-2dbd4082bb47.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Hyrule Warriors",
+      "ids": [
+        "000500001017cd00",
+        "000500001017d800",
+        "000500001017d900"
+      ],
+      "launchbox": 23230,
+      "urls": [
+        "https://images.launchbox-app.com/54def941-5cf9-406c-b8a8-df503ae26765.png",
+        "https://images.launchbox-app.com/887eba3f-241d-4273-be2d-ff4faf8121a5.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Kirby and the Rainbow Curse",
+      "ids": [
+        "0005000010188b00",
+        "00050000101abc00"
+      ],
+      "launchbox": 25043,
+      "urls": [
+        "https://images.launchbox-app.com/e990be30-d3c2-454a-b490-a0a84083e398.png",
+        "https://images.launchbox-app.com/755b0cba-e9fe-4288-a861-cfefc67d564c.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Mario & Sonic at the Rio 2016 Olympic Games",
+      "ids": [
+        "0005000010190300",
+        "00050000101e5300",
+        "00050000101e5400"
+      ],
+      "launchbox": 106293,
+      "urls": [
+        "https://images.launchbox-app.com/ad67746a-b860-4b76-a22c-960cae8daa3e.png",
+        "https://images.launchbox-app.com/49b1164d-f2ee-4fee-b822-7421dc178b38.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Mario Kart 8",
+      "ids": [
+        "000500001010eb00",
+        "000500001010ec00",
+        "000500001010ed00"
+      ],
+      "launchbox": 17444,
+      "urls": [
+        "https://images.launchbox-app.com/82367a20-fec1-41f9-bca6-9b7738ccbb0e.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Mario Party 10",
+      "ids": [
+        "0005000010161f00",
+        "0005000010162d00",
+        "0005000010162e00"
+      ],
+      "launchbox": 25042,
+      "urls": [
+        "https://images.launchbox-app.com/85213248-6aff-4d88-a4c5-d3e636a4a00b.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Mario Tennis: Ultra Smash",
+      "ids": [
+        "0005000010199000",
+        "00050000101a3500",
+        "00050000101a3600"
+      ],
+      "launchbox": 33065,
+      "urls": [
+        "https://images.launchbox-app.com/a174d8c9-6608-427d-bb2e-cf840b000eb5.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Mini Mario & Friends amiibo Challenge",
+      "ids": [
+        "00050000101c6100",
+        "00050000101c6200",
+        "00050000101c6300"
+      ],
+      "launchbox": 126927,
+      "urls": [
+        "https://images.launchbox-app.com/19272126-f491-4f63-97d5-e553f83e7f4a.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Pokkén Tournament",
+      "ids": [
+        "00050000101c5800",
+        "00050000101df400",
+        "00050000101df500"
+      ],
+      "launchbox": 116095,
+      "urls": [
+        "https://images.launchbox-app.com/5fe31125-8275-4445-9de9-a8155420914d.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Shovel Knight",
+      "ids": [
+        "000500001016e100",
+        "0005000010178f00",
+        "00050000101d9300"
+      ],
+      "launchbox": 21331,
+      "urls": [
+        "https://images.launchbox-app.com/240bd187-bc65-41fb-8b3f-86f142b5787e.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Splatoon",
+      "ids": [
+        "0005000010162b00",
+        "0005000010176900",
+        "0005000010176a00",
+        "00050000101cde00"
+      ],
+      "launchbox": 21148,
+      "urls": [
+        "https://images.launchbox-app.com/4f86c7c3-314c-4543-910f-b3c88c1daf62.png",
+        "https://images.launchbox-app.com/65c9b8e3-df6e-46ee-a360-8b660cd11f42.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Star Fox Guard",
+      "ids": [
+        "00050000101beb00",
+        "00050000101bec00",
+        "00050000101bed00"
+      ],
+      "launchbox": 90932,
+      "urls": [
+        "https://images.launchbox-app.com/b4fa254a-bedf-4131-98d6-fc20c4c7dd9d.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Star Fox Zero",
+      "ids": [
+        "00050000101aff00",
+        "00050000101b0400",
+        "00050000101b0500"
+      ],
+      "launchbox": 31302,
+      "urls": [
+        "https://images.launchbox-app.com/262ba542-927b-4be8-bafb-dc5586cdbd0c.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Super Mario Maker",
+      "ids": [
+        "000500001018db00",
+        "000500001018dc00",
+        "000500001018dd00"
+      ],
+      "launchbox": 31277,
+      "urls": [
+        "https://images.launchbox-app.com/2f8535ab-85e3-4fe8-97d6-34dcec39ea0b.png",
+        "https://images.launchbox-app.com/74d9124e-6e56-4d31-acb9-971f0b680c5a.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Super Smash Bros. for Wii U",
+      "ids": [
+        "0005000010110e00",
+        "0005000010144f00",
+        "0005000010145000"
+      ],
+      "launchbox": 11151,
+      "urls": [
+        "https://images.launchbox-app.com/6c3e983a-2471-490c-99c0-0085a55e3d07.png",
+        "https://images.launchbox-app.com/72ddfa74-9619-4a88-bc7f-e354873486aa.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Taiko Drum Master: Atsumete Tomodachi Daisakusen",
+      "ids": [
+        "00050000101d3000"
+      ],
+      "launchbox": 134309,
+      "matched_platform": "Nintendo Wii U",
+      "artwork_name": "Taiko no Tatsujin: Atsumete Tomodachi Daisakusen!",
+      "urls": [
+        "https://images.launchbox-app.com/4be86fb5-77b6-4084-b3b6-4aa3ac6342f8.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "The Legend of Zelda: Breath of the Wild",
+      "ids": [
+        "00050000101c9300",
+        "00050000101c9400",
+        "00050000101c9500"
+      ],
+      "launchbox": 123994,
+      "urls": [
+        "https://images.launchbox-app.com/34de55ba-796d-476b-a0d8-f1a22d39bec6.png",
+        "https://images.launchbox-app.com/29243dc5-371d-4359-a063-36fe089ab7a8.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "The Legend of Zelda: Twilight Princess HD",
+      "ids": [
+        "000500001019c800",
+        "000500001019e500",
+        "000500001019e600"
+      ],
+      "launchbox": 33799,
+      "urls": [
+        "https://images.launchbox-app.com/b757714d-f313-480b-acbd-d0427c2ab118.png"
+      ]
+    },
+    {
+      "platform": "Wii U",
+      "title": "Yoshi's Woolly World",
+      "ids": [
+        "0005000010131f00"
+      ],
+      "launchbox": 22650,
+      "urls": [
+        "https://images.launchbox-app.com/8bf84782-0623-47f9-9789-c034a58bbdc7.png",
+        "https://images.launchbox-app.com/ec9cdfd1-9ef9-405e-8772-9dbd8acee270.png"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "folder": "series",
+      "name": "8-bit Mario",
+      "source": "https://commons.wikimedia.org/wiki/File:Mario_Series_Logo.svg",
+      "license": "Public domain",
+      "artwork_name": "Super Mario",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/250px-Mario_Series_Logo.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Animal Crossing",
+      "source": "https://commons.wikimedia.org/wiki/File:Animal_Crossing_Leaf.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Animal_Crossing_Leaf.svg/250px-Animal_Crossing_Leaf.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "BoxBoy!",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/adcec2a9-ce52-4175-9fd4-d86335e04dda.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Chibi-Robo!",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 34961,
+      "matched_platform": "Nintendo 3DS",
+      "artwork_name": "Chibi-Robo! Zip Lash",
+      "urls": [
+        "https://images.launchbox-app.com/6c790fa4-ca45-42b6-9437-70e0f8f51ca0.png",
+        "https://images.launchbox-app.com/r2_a0e80efc-c049-4666-b4f3-ce17227202c6.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Diablo",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 758,
+      "matched_platform": "Windows",
+      "artwork_name": "Diablo",
+      "urls": [
+        "https://images.launchbox-app.com/fdfff484-61a9-4a2e-8436-2bfa2d3fe8e2.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Donkey Kong",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/donkeykong_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Fire Emblem",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/fireemblem_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Kirby",
+      "source": "https://commons.wikimedia.org/wiki/File:Kirby_Icon.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Kirby_Icon.svg/250px-Kirby_Icon.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Kirby Air Riders",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/733327a2-0c95-49f2-b229-230676acf504.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Legend Of Zelda",
+      "source": "https://commons.wikimedia.org/wiki/File:Wordmark_Zelda.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Wordmark_Zelda.svg/250px-Wordmark_Zelda.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Mario Sports Superstars",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/44750eb3-df00-438f-b3d4-21d00794ecdc.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Mega Man",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/rockman_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Metroid",
+      "source": "https://commons.wikimedia.org/wiki/File:Metroid_logo.png",
+      "license": "Public domain",
+      "urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/2/25/Metroid_logo.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Monster Hunter",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 13102,
+      "matched_platform": "Sony Playstation 2",
+      "artwork_name": "Monster Hunter",
+      "urls": [
+        "https://images.launchbox-app.com/0a6112fe-65a6-441d-83a4-fa1b3a0cb2ca.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Monster Hunter Rise",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/06f9a10f-a84e-436b-a715-604694c3423b.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "My Mario Wooden Blocks",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "artwork_name": "Super Mario",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/mario_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Others",
+      "urls": []
+    },
+    {
+      "folder": "series",
+      "name": "Pikmin",
+      "source": "https://commons.wikimedia.org/wiki/File:Pikmin_series_logo_new.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Pikmin_series_logo_new.svg/250px-Pikmin_series_logo_new.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Pokemon",
+      "source": "https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/250px-International_Pok%C3%A9mon_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Power Pros",
+      "source": "https://www.konami.com/pawa/switch/",
+      "artwork_name": "Jikkyou Pawafuru Puroyakyuu",
+      "license": "Konami official site",
+      "urls": [
+        "https://img.konami.com/pawa/switch/s/images/logo_pawa_switch.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Pragmata",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 474818,
+      "matched_platform": "Sony Playstation 5",
+      "artwork_name": "PRAGMATA",
+      "urls": [
+        "https://images.launchbox-app.com/46889dc6-fc40-491a-9e16-08de6da48489.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Resident Evil",
+      "source": "https://commons.wikimedia.org/wiki/File:Resident_Evil_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Resident_Evil_logo.svg/330px-Resident_Evil_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Shovel Knight",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/1dc149f8-426e-40ff-8ccc-b3a213bf2aa6.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Skylanders",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 32516,
+      "matched_platform": "Sony Playstation 4",
+      "artwork_name": "Skylanders SuperChargers",
+      "urls": [
+        "https://images.launchbox-app.com/e698adae-624e-4e78-8878-cd9f4cd236f3.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Splatoon",
+      "source": "https://commons.wikimedia.org/wiki/File:Splatoon_B%26W_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Splatoon_B%26W_logo.svg/250px-Splatoon_B%26W_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Street Fighter 6",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "artwork_name": "Street Fighter",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/streetfighter_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Super Mario Bros.",
+      "source": "https://commons.wikimedia.org/wiki/File:Mario_Series_Logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/250px-Mario_Series_Logo.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Super Nintendo World",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "artwork_name": "Super Mario",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/mario_en.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Super Smash Bros.",
+      "source": "https://commons.wikimedia.org/wiki/File:Super_Smash_Bros._logo_2018.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/26/Super_Smash_Bros._logo_2018.svg/250px-Super_Smash_Bros._logo_2018.svg.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Xenoblade Chronicles 3",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/3a1987ac-2b20-498c-a9e6-501ff49b9a1a.png",
+        "https://images.launchbox-app.com/3c2c8200-b006-4795-9e89-9788f35e57ff.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Yoshi's Woolly World",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/8bf84782-0623-47f9-9789-c034a58bbdc7.png",
+        "https://images.launchbox-app.com/ec9cdfd1-9ef9-405e-8772-9dbd8acee270.png"
+      ]
+    },
+    {
+      "folder": "series",
+      "name": "Yu-Gi-Oh!",
+      "source": "https://www.konami.com/crossmedia/us/en/products/yugioh/",
+      "license": "Konami official site",
+      "fallback_artwork_name": "Yu-Gi-Oh! RUSH DUEL: Dawn of the Battle Royale!!",
+      "urls": [
+        "https://www.konami.com/crossmedia/assets/images/products/Yugioh_logo.png",
+        "https://images.launchbox-app.com/480ec670-ae0f-4a77-85fc-fac3fc9254b3.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "ARMS",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/bc66c2ae-a1a2-4562-a9da-4a7dad3290eb.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Animal Crossing",
+      "source": "https://commons.wikimedia.org/wiki/File:Animal_Crossing_Leaf.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Animal_Crossing_Leaf.svg/250px-Animal_Crossing_Leaf.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Banjo Kazooie",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/banjo_and_kazooie_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Bayonetta",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/9210adb7-32ab-4358-b615-d5e062408975.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "BoxBoy!",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/adcec2a9-ce52-4175-9fd4-d86335e04dda.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Castlevania",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/dracula_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Chibi Robo",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 34961,
+      "matched_platform": "Nintendo 3DS",
+      "artwork_name": "Chibi-Robo! Zip Lash",
+      "urls": [
+        "https://images.launchbox-app.com/6c790fa4-ca45-42b6-9437-70e0f8f51ca0.png",
+        "https://images.launchbox-app.com/r2_a0e80efc-c049-4666-b4f3-ce17227202c6.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Classic Nintendo",
+      "artwork_name": "Nintendo",
+      "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Logotype.png",
+      "license": "Public domain text logo, trademarked",
+      "urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/1/1c/Nintendo_Logotype.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Dark Souls",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 10273,
+      "matched_platform": "Sony Playstation 3",
+      "artwork_name": "Dark Souls",
+      "urls": [
+        "https://images.launchbox-app.com/9f840c7c-ed11-4445-a431-3790e59a5f82.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Diablo",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 758,
+      "matched_platform": "Windows",
+      "artwork_name": "Diablo",
+      "urls": [
+        "https://images.launchbox-app.com/fdfff484-61a9-4a2e-8436-2bfa2d3fe8e2.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Donkey Kong",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/donkeykong_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Dragon Quest",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/70218830-813f-4922-a831-49568cdfa7df.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Earthbound",
+      "source": "https://commons.wikimedia.org/wiki/File:EarthBound_Logo.png",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/EarthBound_Logo.png/250px-EarthBound_Logo.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "F-Zero",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/f-zero_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Fatal Fury",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/garou_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Final Fantasy",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/71904f54-e641-4122-909a-4a62b536bb35.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Fire Emblem",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/fireemblem_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Kellogs",
+      "artwork_name": "Kellogg’s",
+      "source": "https://commons.wikimedia.org/wiki/File:Kellogg%27s-Logo.svg",
+      "license": "Public domain text logo, trademarked",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Kellogg%27s-Logo.svg/330px-Kellogg%27s-Logo.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Kid Icarus",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/palutena_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Kingdom Hearts",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/kingdomhearts_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Kirby",
+      "source": "https://commons.wikimedia.org/wiki/File:Kirby_Icon.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/da/Kirby_Icon.svg/250px-Kirby_Icon.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Mario Sports Superstars",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/44750eb3-df00-438f-b3d4-21d00794ecdc.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Megaman",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/rockman_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Metal Gear Solid",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/metalgear_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Metroid",
+      "source": "https://commons.wikimedia.org/wiki/File:Metroid_logo.png",
+      "license": "Public domain",
+      "urls": [
+        "https://upload.wikimedia.org/wikipedia/commons/2/25/Metroid_logo.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Mii",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/mii_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Minecraft",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/bbd000a7-dc78-4f2c-b559-64bd02621079.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Monster Hunter",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 13102,
+      "matched_platform": "Sony Playstation 2",
+      "artwork_name": "Monster Hunter",
+      "urls": [
+        "https://images.launchbox-app.com/0a6112fe-65a6-441d-83a4-fa1b3a0cb2ca.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Pac-man",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/pacman_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Persona",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/persona_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Pikmin",
+      "source": "https://commons.wikimedia.org/wiki/File:Pikmin_series_logo_new.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/Pikmin_series_logo_new.svg/250px-Pikmin_series_logo_new.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Pokemon",
+      "source": "https://commons.wikimedia.org/wiki/File:International_Pok%C3%A9mon_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/250px-International_Pok%C3%A9mon_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Power Pros",
+      "source": "https://www.konami.com/pawa/switch/",
+      "artwork_name": "Jikkyou Pawafuru Puroyakyuu",
+      "license": "Konami official site",
+      "urls": [
+        "https://img.konami.com/pawa/switch/s/images/logo_pawa_switch.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Pragmata",
+      "source": "https://gamesdb.launchbox-app.com/",
+      "launchbox": 474818,
+      "matched_platform": "Sony Playstation 5",
+      "artwork_name": "PRAGMATA",
+      "urls": [
+        "https://images.launchbox-app.com/46889dc6-fc40-491a-9e16-08de6da48489.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Punch Out",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/punch_out_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Resident Evil",
+      "source": "https://commons.wikimedia.org/wiki/File:Resident_Evil_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Resident_Evil_logo.svg/330px-Resident_Evil_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Shovel Knight",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/1dc149f8-426e-40ff-8ccc-b3a213bf2aa6.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Sonic",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/sonic_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Splatoon",
+      "source": "https://commons.wikimedia.org/wiki/File:Splatoon_B%26W_logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Splatoon_B%26W_logo.svg/250px-Splatoon_B%26W_logo.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Star Fox",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/r2_d46151a9-387e-4ee1-920c-ea2483cd4f90.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Street Fighter",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/streetfighter_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Super Mario",
+      "source": "https://commons.wikimedia.org/wiki/File:Mario_Series_Logo.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Mario_Series_Logo.svg/250px-Mario_Series_Logo.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Tekken",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/tekken_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "The Legend of Zelda",
+      "source": "https://commons.wikimedia.org/wiki/File:Wordmark_Zelda.svg",
+      "license": "Public domain",
+      "urls": [
+        "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Wordmark_Zelda.svg/250px-Wordmark_Zelda.svg.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Wii Fit",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/wii_fit_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Xenoblade",
+      "source": "https://www.smashbros.com/en_US/fighter/series.html",
+      "urls": [
+        "https://www.smashbros.com/assets_v2/img/fighter/logo/xenoblade_en.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Yoshi's Woolly World",
+      "source": "https://www.launchbox-app.com/",
+      "urls": [
+        "https://images.launchbox-app.com/8bf84782-0623-47f9-9789-c034a58bbdc7.png",
+        "https://images.launchbox-app.com/ec9cdfd1-9ef9-405e-8772-9dbd8acee270.png"
+      ]
+    },
+    {
+      "folder": "games",
+      "name": "Yu-Gi-Oh!",
+      "source": "https://www.konami.com/crossmedia/us/en/products/yugioh/",
+      "license": "Konami official site",
+      "fallback_artwork_name": "Yu-Gi-Oh! RUSH DUEL: Dawn of the Battle Royale!!",
+      "urls": [
+        "https://www.konami.com/crossmedia/assets/images/products/Yugioh_logo.png",
+        "https://images.launchbox-app.com/480ec670-ae0f-4a77-85fc-fac3fc9254b3.png"
+      ]
+    }
+  ]
+}

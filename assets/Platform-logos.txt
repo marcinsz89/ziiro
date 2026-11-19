@@ -1,0 +1,15 @@
+Nintendo platform logos
+
+The logos identify the consoles listed in Ziiro's compatibility browser.
+Nintendo owns the marks. Wikimedia Commons describes these particular files
+as public domain due to the copyright originality threshold and flags
+separate trademark rights. Ziiro is an independent project.
+
+The bundled PNGs are resized from these files. The Nintendo 3DS wordmark is
+cropped to 3DS with transparent padding. Both Switch marks are rendered in red.
+
+Switch — https://commons.wikimedia.org/wiki/File:Nintendo_Switch_Logo_(without_text).svg
+Switch 2 — https://www.nintendo.com/successor/assets/img/region-selector/section-hero-logo.svg
+Switch 2 file reference — https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_logo_transparent.svg
+Nintendo 3DS — https://commons.wikimedia.org/wiki/File:Nintendo_3DS_logo.svg
+Wii U — https://commons.wikimedia.org/wiki/File:WiiU.svg
