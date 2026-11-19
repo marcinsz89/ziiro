@@ -73,8 +73,6 @@ static bool handle_key(SDL_Keycode key, int repeat)
         return studio_input(STUDIO_SELECT);
     case SDLK_ESCAPE:
         return studio_input(STUDIO_BACK);
-    case SDLK_b:
-        return studio_input(STUDIO_BACKUP);
     case SDLK_r:
         studio_retry_nfc();
         return true;

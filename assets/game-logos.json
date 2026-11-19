@@ -1,5 +1,27 @@
 {
   "version": 1,
+  "platforms": [
+    {
+      "name": "3DS",
+      "source": "https://commons.wikimedia.org/wiki/File:Nintendo_3DS_logo.svg",
+      "urls": ["https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Nintendo_3DS_logo.svg/250px-Nintendo_3DS_logo.svg.png"]
+    },
+    {
+      "name": "Switch",
+      "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_Logo_%28without_text%29.svg",
+      "urls": ["https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Nintendo_Switch_Logo_%28without_text%29.svg/250px-Nintendo_Switch_Logo_%28without_text%29.svg.png"]
+    },
+    {
+      "name": "Switch 2",
+      "source": "https://commons.wikimedia.org/wiki/File:Nintendo_Switch_2_logo_transparent.svg",
+      "urls": ["https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Nintendo_Switch_2_logo_transparent.svg/330px-Nintendo_Switch_2_logo_transparent.svg.png"]
+    },
+    {
+      "name": "Wii U",
+      "source": "https://commons.wikimedia.org/wiki/File:WiiU.svg",
+      "urls": ["https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/WiiU.svg/330px-WiiU.svg.png"]
+    }
+  ],
   "titles": [
     {
       "platform": "3DS",

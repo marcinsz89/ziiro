@@ -182,7 +182,6 @@ static bool key_action(const struct input_event *event)
     case KEY_TAB: return studio_input(STUDIO_VIEW);
     case KEY_G: return studio_input(STUDIO_GROUP);
     case KEY_T: return studio_input(STUDIO_REFRESH);
-    case KEY_B: return studio_input(STUDIO_BACKUP);
     case KEY_R: studio_retry_nfc(); return true;
     case KEY_U: return studio_input(STUDIO_SETTINGS);
     case KEY_S: return studio_input(STUDIO_SEARCH);

@@ -117,7 +117,7 @@ def main() -> None:
         entry["urls"] = urls
         entries.append(entry)
 
-    index = {"version": 1, "titles": entries,
+    index = {"version": 1, "platforms": prior.get("platforms", []), "titles": entries,
              "groups": group_entries(group_names, prior)}
     write_atomically(args.output, (json.dumps(index, indent=2, ensure_ascii=False) + "\n").encode())
     matched_games = sum(bool(entry["urls"]) for entry in entries)

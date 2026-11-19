@@ -1,9 +1,11 @@
 Package: ziiro
-Version: @PROJECT_VERSION@~poc21
+Version: @PROJECT_VERSION@-1
 Section: utils
 Priority: optional
 Architecture: arm64
 Depends: libc6 (>= 2.34), libstdc++6, python3 (>= 3.9), ca-certificates
-Maintainer: Ziiro local build <ziiro@localhost>
+Suggests: alsa-utils
+Maintainer: Marcin Szydłowski <2130376+marcinsz89@users.noreply.github.com>
 Description: Offline amiibo backup browser for Cardputer Zero
- Browse an offline metadata catalog and a library of locally supplied backups.
+ Browse and search a catalog of amiibo figures and compatible games. Import
+ local backups and optionally present them with the U219 NFC Cap.

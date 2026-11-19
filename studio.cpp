@@ -77,7 +77,7 @@ struct Row {
     lv_obj_t *note;
 };
 
-enum class Screen { Welcome, Groups, PlatformGames, Figures, Search, Figure, Games, Backup, Settings };
+enum class Screen { Welcome, Groups, PlatformGames, Figures, Search, Figure, Games, Settings };
 enum class Grouping { Series, Franchise, Platform };
 
 struct {
@@ -276,7 +276,7 @@ bool set_art(lv_obj_t *image, lv_obj_t *fallback, const fs::path &path, int widt
 
 bool browsing_logos()
 {
-    return ui.screen == Screen::PlatformGames || (ui.screen == Screen::Groups && ui.grouping != Grouping::Platform);
+    return ui.screen == Screen::PlatformGames || ui.screen == Screen::Groups;
 }
 
 bool browsing_figures()
@@ -289,6 +289,7 @@ fs::path logo_key(const std::string &group)
     if (ui.screen == Screen::PlatformGames) {
         return fs::path("titles") / artwork_slug(ui.groups[ui.group].name) / artwork_slug(group);
     }
+    if (ui.grouping == Grouping::Platform) return fs::path("platforms") / artwork_slug(group);
     return fs::path(ui.grouping == Grouping::Franchise ? "games" : "series") / artwork_slug(group);
 }
 
@@ -313,7 +314,6 @@ void show_art(lv_obj_t *image, lv_obj_t *fallback, const std::string &group,
             set_art(image, fallback, ui.custom_artwork / logo, width, height)) return;
         if (set_art(image, fallback, ui.custom_artwork / relative_path, width, height)) return;
     }
-    if (platform && set_art(image, fallback, ui.share / "artwork" / relative_path, width, height)) return;
     const auto archive_image = figure ? ui.archive_artwork.figure_image(*figure) :
         ui.archive_artwork.group_image(group);
     if (set_art(image, fallback, archive_image, width, height)) return;
@@ -799,10 +799,6 @@ void draw_nfc()
     lv_label_set_text(ui.nfc_label, labels.status);
     lv_obj_set_style_text_color(ui.nfc_label,
         lv_color_hex(ui.nfc == NFC_READY || ui.nfc == NFC_PRESENTING ? mint : amber), 0);
-    if (ui.screen == Screen::Backup) {
-        lv_label_set_text(ui.activity_detail, nfc_needs_retry(ui.nfc) ? labels.detail : "Tag capture unavailable");
-        lv_label_set_text(ui.footer, ui.nfc == NFC_UNAVAILABLE ? "Esc Back" : "R Check NFC  Esc Back");
-    }
     if (ui.screen != Screen::Figure) return;
     const bool has_backup = !figure_list()[figure_selection()]->backups.empty();
     lv_label_set_text(ui.activity_detail, ui.nfc == NFC_READY && !has_backup ? "No saved backup" : labels.detail);
@@ -1010,7 +1006,7 @@ void draw_settings()
     menu_option(ui.settings_artwork, ui.download_artwork ? "Download artwork   On" : "Download artwork   Off",
                 ui.settings_item == 3);
     menu_option(ui.settings_batch, "Download all figure artwork", ui.settings_item == 4);
-    menu_option(ui.settings_logos, "Download game & series logos", ui.settings_item == 5);
+    menu_option(ui.settings_logos, "Download all logos", ui.settings_item == 5);
     lv_label_set_text(ui.footer, *ui.sync_status ? ui.sync_status : "F/X Select  Enter Confirm  Esc Back");
 }
 
@@ -1174,10 +1170,6 @@ void draw_activity(Screen screen)
         draw_figure_activity();
     } else if (screen == Screen::Games) {
         draw_game_activity();
-    } else if (screen == Screen::Backup) {
-        lv_label_set_text(ui.activity_caption, "BACKUP");
-        lv_label_set_text(ui.activity_title, "NFC backup");
-        draw_nfc();
     } else {
         draw_sync_status();
     }
@@ -1585,9 +1577,6 @@ bool studio_input(StudioInput input)
         if (input == STUDIO_REFRESH && !refresh()) break;
         rebuild_groups();
         draw_browser(false, true);
-        break;
-    case STUDIO_BACKUP:
-        show_activity(Screen::Backup);
         break;
     case STUDIO_SETTINGS:
         show_activity(Screen::Settings);

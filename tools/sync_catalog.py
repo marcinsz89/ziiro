@@ -324,7 +324,8 @@ def logo_titles(index: dict, catalog: Path) -> dict[str, list[str]]:
     groups = {(entry["folder"], entry["name"]): entry["urls"] for entry in index["groups"]}
 
     games = {}
-    result = {}
+    result = {f"platforms/{artwork_slug(entry['name'])}": entry["urls"]
+              for entry in index.get("platforms", []) if entry["urls"]}
     with catalog.open(encoding="utf-8") as source:
         if not source.readline().startswith(HEADER):
             raise ValueError("Download the catalog before fetching logos")
@@ -387,7 +388,7 @@ def fetch_logo(urls: list[str], converter: Path) -> bytes:
         if not allowed_logo_url(url):
             continue
         try:
-            request = Request(url, headers={"User-Agent": "Ziiro/0.1 (Cardputer Zero artwork downloader)"})
+            request = Request(url, headers={"User-Agent": "Ziiro/1.0 (Cardputer Zero artwork downloader)"})
             with opener.open(request, timeout=8) as response:
                 if not allowed_logo_url(response.geturl()):
                     continue
