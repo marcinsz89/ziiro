@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(ziiro VERSION 1.1.0 LANGUAGES C CXX)
+project(ziiro VERSION 1.1.1 LANGUAGES C CXX)
 
 option(ZIIRO_DEVICE "Build the ARM64 Linux Cardputer Zero app" OFF)
 if(ZIIRO_DEVICE)

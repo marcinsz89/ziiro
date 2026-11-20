@@ -4,6 +4,10 @@ Ziiro is an amiibo catalog and backup library for the M5Stack Cardputer Zero. Br
 
 ## Changelog
 
+### 1.1.1
+
+- Favourites now uses the same miniature previews, icons, and game subtitles as the other amiibo lists. The list stays flat and alphabetical.
+
 ### 1.1.0
 
 - Added Favourites. Press **V** to mark or unmark an amiibo and **G** to cycle to the alphabetical list. **Tab** switches between Library and Catalog within Favourites.
@@ -36,7 +40,7 @@ The screenshots show the desktop preview at the Zero’s native 320 × 170 resol
 
 Open a figure and press **I** to see its recorded game effects. Use **F/X** to browse the entries.
 
-Favourites is a flat alphabetical list. In Library it shows favourited amiibos with local backups. In Catalog it shows all available favourites. Search within Favourites covers the current scope.
+Favourites is a flat alphabetical list with the same miniature setting, icons, and game subtitles as other figure lists. In Library it shows favourited amiibos with local backups. In Catalog it shows all available favourites. Search within Favourites covers the current scope.
 
 ![A game compatibility entry showing the console, game title, and effect](docs/screenshots/compatibility.png)
 

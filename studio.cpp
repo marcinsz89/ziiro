@@ -329,7 +329,8 @@ bool browsing_logos()
 
 bool browsing_figures()
 {
-    return ui.screen == Screen::Figures || (ui.screen == Screen::Search && !ui.editing_search);
+    return ui.screen == Screen::Figures || ui.screen == Screen::Favourites ||
+        (ui.screen == Screen::Search && !ui.editing_search);
 }
 
 fs::path logo_key(const std::string &group)
@@ -654,16 +655,17 @@ void draw_browser(bool animate, bool change_view = false)
 {
     const bool search = ui.screen == Screen::Search;
     const bool favourites = ui.screen == Screen::Favourites;
-    const bool flat = ui.grouping == Grouping::Favourites;
-    const bool miniatures = ui.show_miniatures && !flat;
     const bool list_figures = search || favourites || ui.screen == Screen::Figures;
     const bool platform_games = ui.screen == Screen::PlatformGames;
     const auto &groups = platform_games ? ui.groups[ui.group].games : ui.groups;
     const std::size_t selected = list_figures ? figure_selection() : platform_games ? ui.platform_game : ui.group;
     const std::size_t count = list_figures ? figure_list().size() : groups.size();
+    const bool miniatures = ui.show_miniatures && !(favourites && count == 0);
     auto &first = search ? ui.search_first : ui.first;
     const auto old_first = first;
-    if (flat) first = std::min(first, count > row_count ? count - row_count : 0);
+    if (ui.grouping == Grouping::Favourites) {
+        first = std::min(first, count > row_count ? count - row_count : 0);
+    }
     if (selected < first) first = selected;
     else if (selected >= first + row_count) first = selected - row_count + 1;
 
@@ -698,11 +700,11 @@ void draw_browser(bool animate, bool change_view = false)
         visible(row.badge, show && miniatures);
         visible(row.title, show);
         const Figure *entry_figure = show && list_figures ? figure_list()[index] : nullptr;
-        const bool marked = entry_figure && !miniatures && !flat && is_favourite(*entry_figure);
-        const bool backed = entry_figure && !miniatures && !flat && !entry_figure->backups.empty();
+        const bool marked = entry_figure && !miniatures && is_favourite(*entry_figure);
+        const bool backed = entry_figure && !miniatures && !entry_figure->backups.empty();
         visible(row.heart, marked);
         visible(row.check, backed);
-        visible(row.note, show && !flat);
+        visible(row.note, show);
         if (!show) continue;
 
         const auto &group = entry_figure ? group_name(*entry_figure) : groups[index].name;
@@ -717,14 +719,12 @@ void draw_browser(bool animate, bool change_view = false)
             const auto &entry = groups[index];
             note = entry.games.empty() ? count_label(entry.figures.size(), "entry", "entries") :
                                         count_label(entry.games.size(), "game", "games");
-        } else if (!flat) {
-            if (!search && ui.grouping == Grouping::Platform) {
-                const auto &games = entry_figure->games;
-                const auto use = std::find_if(games.begin(), games.end(), matches_platform_game);
-                if (use != games.end()) note = use->effect;
-            } else {
-                note = figure_subtitle(*entry_figure);
-            }
+        } else if (!search && ui.grouping == Grouping::Platform) {
+            const auto &games = entry_figure->games;
+            const auto use = std::find_if(games.begin(), games.end(), matches_platform_game);
+            if (use != games.end()) note = use->effect;
+        } else {
+            note = figure_subtitle(*entry_figure);
         }
         lv_obj_set_y(row.title, row_start + row_step * static_cast<int>(i) + (note.empty() ? 6 : 1));
         lv_label_set_text(row.note, note.c_str());
@@ -1067,7 +1067,7 @@ void poll_artwork(lv_timer_t *)
             if (lv_obj_has_flag(ui.activity_image, LV_OBJ_FLAG_HIDDEN)) ui.artwork_failures.insert(figure.id);
         }
         maybe_download_artwork(figure);
-    } else if (saved && ui.show_miniatures && (ui.screen == Screen::Figures || ui.screen == Screen::Search)) {
+    } else if (saved && ui.show_miniatures && (browsing_figures() || ui.screen == Screen::Search)) {
         draw_browser(false);
     }
 }

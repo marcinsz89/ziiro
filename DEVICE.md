@@ -4,10 +4,10 @@ Ziiro targets the stock M5Stack ARM64 Linux image and uses the built-in 320 × 1
 
 ## Install the release package
 
-Install Ziiro from the Cardputer Zero AppStore using share code **ZIRO**, then launch it from HOME. To test 1.1 before the Store update goes live, copy `ziiro_1.1.0-1_arm64.deb` to the Zero and install it with APT.
+Install Ziiro from the Cardputer Zero AppStore using share code **ZIRO**, then launch it from HOME. To test 1.1.1 before the Store update goes live, copy `ziiro_1.1.1-1_arm64.deb` to the Zero and install it with APT.
 
 ```sh
-sudo apt install ./ziiro_1.1.0-1_arm64.deb
+sudo apt install ./ziiro_1.1.1-1_arm64.deb
 ```
 
 Run the app as the normal launcher user. On first launch, choose **Download catalog** or **Use local backups**. The [README](README.md) describes browsing, search, and controls.
@@ -63,4 +63,4 @@ cmake --build build-device --parallel 2
 python3 tools/package_device.py build-device dist
 ```
 
-On macOS, use Zig 0.15.2 and add `-DCMAKE_TOOLCHAIN_FILE="$PWD/cmake/arm64-linux-zig.cmake"` to the configure command. Use a fresh build directory when changing toolchains. The package is written to `dist/ziiro_1.1.0-1_arm64.deb`. Package without an artwork pack for the Store.
+On macOS, use Zig 0.15.2 and add `-DCMAKE_TOOLCHAIN_FILE="$PWD/cmake/arm64-linux-zig.cmake"` to the configure command. Use a fresh build directory when changing toolchains. The package is written to `dist/ziiro_1.1.1-1_arm64.deb`. Package without an artwork pack for the Store.
