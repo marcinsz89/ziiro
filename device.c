@@ -186,6 +186,7 @@ static bool key_action(const struct input_event *event)
     case KEY_U: return studio_input(STUDIO_SETTINGS);
     case KEY_S: return studio_input(STUDIO_SEARCH);
     case KEY_I: return studio_input(STUDIO_GAMES);
+    case KEY_V: return studio_input(STUDIO_FAVOURITE);
     default: return true;
     }
 }

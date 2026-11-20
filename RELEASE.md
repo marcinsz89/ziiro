@@ -1,4 +1,14 @@
-# Ziiro 1.0 release checklist
+# Ziiro releases
+
+## Release 1.1.0
+
+Build `dist/ziiro_1.1.0-1_arm64.deb` using the [device build instructions](DEVICE.md#build-a-debian-package). Use the [README changelog](README.md#changelog) as the release notes.
+
+After pushing the release commit, draft a GitHub Release tagged `v1.1.0` at that commit and attach the ARM64 `.deb`. GitHub supplies the source archives for the tag.
+
+For the Store update, sign in as `marcinsz89` and upload the same `.deb` in the [Developer Center](https://dev.cardputer.cc/). Confirm package name `ziiro`, version `1.1.0-1`, and share code `ZIRO`. Review the existing listing, then follow the generated package pull request through deployment.
+
+## Original 1.0 release checklist
 
 Build the standard `ziiro_1.0.0-1_arm64.deb` using the [device build instructions](DEVICE.md#build-a-debian-package). Keep the Debian package name `ziiro` and use the personal GitHub account `marcinsz89` for the first submission. The first publishing account owns subsequent Store updates.
 

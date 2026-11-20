@@ -88,6 +88,8 @@ static bool handle_key(SDL_Keycode key, int repeat)
         return studio_input(STUDIO_SEARCH);
     case SDLK_i:
         return studio_input(STUDIO_GAMES);
+    case SDLK_v:
+        return studio_input(STUDIO_FAVOURITE);
     default:
         return true;
     }

@@ -19,7 +19,8 @@ typedef enum {
     STUDIO_GROUP,
     STUDIO_REFRESH,
     STUDIO_SEARCH,
-    STUDIO_GAMES
+    STUDIO_GAMES,
+    STUDIO_FAVOURITE
 } StudioInput;
 
 bool studio_init(const char *profile, const char *share, const char *backups, const char *custom_artwork);

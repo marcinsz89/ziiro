@@ -1,13 +1,13 @@
 # Ziiro on Cardputer Zero
 
-Ziiro 1.0 targets the stock M5Stack ARM64 Linux image and uses the built-in 320 × 170 LCD and keyboard. Catalog and library browsing work without a Cap. NFC presentation requires the U219 CC1101 + NFC Cap and access to the device's GPIO and SPI interfaces.
+Ziiro targets the stock M5Stack ARM64 Linux image and uses the built-in 320 × 170 LCD and keyboard. Catalog and library browsing work without a Cap. NFC presentation requires the U219 CC1101 + NFC Cap and access to the device's GPIO and SPI interfaces.
 
 ## Install the release package
 
-Once Ziiro is published, install it from the Cardputer Zero AppStore and launch **Ziiro** from HOME. To test the same package before publication, copy `ziiro_1.0.0-1_arm64.deb` to the Zero and run:
+Install Ziiro from the Cardputer Zero AppStore using share code **ZIRO**, then launch it from HOME. To test 1.1 before the Store update goes live, copy `ziiro_1.1.0-1_arm64.deb` to the Zero and install it with APT.
 
 ```sh
-sudo apt install ./ziiro_1.0.0-1_arm64.deb
+sudo apt install ./ziiro_1.1.0-1_arm64.deb
 ```
 
 Run the app as the normal launcher user. On first launch, choose **Download catalog** or **Use local backups**. The [README](README.md) describes browsing, search, and controls.
@@ -21,6 +21,7 @@ The device profile is `~/ziiro/` for the account that runs HOME. Launch once or 
 | `amiibo_data/` | Backups you supply |
 | `artwork/` | Optional custom PNGs |
 | `catalog.tsv` | Downloaded catalog |
+| `favourites.txt` | Favourited amiibo model IDs |
 | `preferences.tsv` | Preview and artwork settings |
 | `downloaded-artwork/`, `downloaded-logos/` | Cached images |
 
@@ -62,4 +63,4 @@ cmake --build build-device --parallel 2
 python3 tools/package_device.py build-device dist
 ```
 
-On macOS, use Zig 0.15.2 and add `-DCMAKE_TOOLCHAIN_FILE="$PWD/cmake/arm64-linux-zig.cmake"` to the configure command. Use a fresh build directory when changing toolchains. The package is written to `dist/ziiro_1.0.0-1_arm64.deb`. Package without an artwork pack for the Store.
+On macOS, use Zig 0.15.2 and add `-DCMAKE_TOOLCHAIN_FILE="$PWD/cmake/arm64-linux-zig.cmake"` to the configure command. Use a fresh build directory when changing toolchains. The package is written to `dist/ziiro_1.1.0-1_arm64.deb`. Package without an artwork pack for the Store.

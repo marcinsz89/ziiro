@@ -18,6 +18,7 @@
 #include <spawn.h>
 #include <sstream>
 #include <string>
+#include <string_view>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <utility>
@@ -35,6 +36,7 @@ constexpr uint32_t selection = 0x31394E;
 constexpr uint32_t line = 0x3D465E;
 constexpr uint32_t mint = 0xAFF2BA;
 constexpr uint32_t amber = 0xF7C28A;
+constexpr uint32_t heart_color = 0xFFA1B9;
 constexpr lv_point_t nfc_ripple_center = {244, 91}; // Center of the figure artwork at rest.
 constexpr uint32_t nfc_ripple_duration = 1600;
 constexpr uint32_t nfc_ripple_fade_start = 550;
@@ -75,10 +77,12 @@ struct Row {
     lv_obj_t *image;
     lv_obj_t *title;
     lv_obj_t *note;
+    lv_obj_t *heart;
+    lv_obj_t *check;
 };
 
-enum class Screen { Welcome, Groups, PlatformGames, Figures, Search, Figure, Games, Settings };
-enum class Grouping { Series, Franchise, Platform };
+enum class Screen { Welcome, Groups, PlatformGames, Figures, Favourites, Search, Figure, Games, Settings };
+enum class Grouping { Series, Franchise, Platform, Favourites };
 
 struct {
     Catalog catalog;
@@ -92,6 +96,9 @@ struct {
     fs::path downloaded_logos;
     ArchiveArtwork archive_artwork;
     std::vector<Group> groups;
+    std::set<std::string> favourite_ids;
+    std::vector<const Figure *> favourites;
+    bool favourites_loaded = false;
     std::size_t group = 0;
     std::size_t platform_game = 0;
     std::size_t item = 0;
@@ -144,6 +151,7 @@ struct {
     lv_obj_t *selection_box;
     lv_obj_t *section;
     lv_obj_t *empty_list;
+    lv_obj_t *empty_hint;
     lv_obj_t *view;
     lv_obj_t *nfc_label;
     std::array<Row, row_count> rows;
@@ -154,6 +162,7 @@ struct {
     lv_obj_t *art_image;
     lv_obj_t *art_status;
     lv_obj_t *art_check;
+    lv_obj_t *preview_heart;
     lv_obj_t *name;
     lv_obj_t *detail;
     lv_obj_t *activity_caption;
@@ -172,7 +181,11 @@ struct {
     lv_obj_t *artwork_hint;
     lv_obj_t *activity_status;
     lv_obj_t *activity_check;
+    lv_obj_t *activity_heart;
     lv_obj_t *footer;
+    lv_obj_t *favourites_notice;
+    lv_obj_t *favourites_message;
+    lv_timer_t *favourites_notice_timer;
 } ui;
 
 lv_obj_t *box(lv_obj_t *parent, int x, int y, int width, int height,
@@ -221,6 +234,41 @@ void backup_status(lv_obj_t *badge, lv_obj_t *check, bool backed)
     lv_obj_set_style_bg_color(badge, lv_color_hex(backed ? mint : background), 0);
     lv_obj_set_style_border_color(badge, lv_color_hex(backed ? background : muted), 0);
     visible(check, backed);
+}
+
+void draw_heart(lv_event_t *event)
+{
+    auto *layer = lv_event_get_layer(event);
+    lv_area_t area;
+    lv_obj_get_coords(lv_event_get_target_obj(event), &area);
+    const auto x = area.x1;
+    const auto y = area.y1;
+
+    lv_draw_rect_dsc_t lobe;
+    lv_draw_rect_dsc_init(&lobe);
+    lobe.bg_color = lv_color_hex(heart_color);
+    lobe.radius = LV_RADIUS_CIRCLE;
+    const lv_area_t left{x, y, x + 6, y + 6};
+    const lv_area_t right{x + 6, y, x + 12, y + 6};
+    lv_draw_rect(layer, &lobe, &left);
+    lv_draw_rect(layer, &lobe, &right);
+
+    lv_draw_triangle_dsc_t point;
+    lv_draw_triangle_dsc_init(&point);
+    point.color = lobe.bg_color;
+    point.p[0] = {x, y + 4};
+    point.p[1] = {x + 12, y + 4};
+    point.p[2] = {x + 6, y + 11};
+    lv_draw_triangle(layer, &point);
+}
+
+lv_obj_t *heart(lv_obj_t *parent, int x, int y)
+{
+    auto *obj = box(parent, x, y, 13, 12, background, 0);
+    lv_obj_set_style_bg_opa(obj, LV_OPA_TRANSP, 0);
+    lv_obj_add_event_cb(obj, draw_heart, LV_EVENT_DRAW_MAIN, nullptr);
+    visible(obj, false);
+    return obj;
 }
 
 uint32_t color_for(const std::string &key)
@@ -373,9 +421,72 @@ void sort_group(Group &group)
     });
 }
 
+std::string ascii_lower(std::string value)
+{
+    for (char &ch : value) {
+        if (ch >= 'A' && ch <= 'Z') ch += 'a' - 'A';
+    }
+    return value;
+}
+
+bool is_favourite(const Figure &figure)
+{
+    return ui.favourite_ids.count(figure.id) != 0;
+}
+
+void rebuild_favourites()
+{
+    ui.favourites.clear();
+    for (const auto &figure : ui.catalog.figures) {
+        if (is_favourite(figure) && (!ui.owned || !figure.backups.empty())) {
+            ui.favourites.push_back(&figure);
+        }
+    }
+    std::sort(ui.favourites.begin(), ui.favourites.end(), [](const Figure *a, const Figure *b) {
+        const auto left = ascii_lower(a->name);
+        const auto right = ascii_lower(b->name);
+        if (left != right) return left < right;
+        if (a->name != b->name) return a->name < b->name;
+        return a->id < b->id;
+    });
+}
+
+std::size_t restored_selection(const std::vector<const Figure *> &figures,
+                               const std::string &id, std::size_t index)
+{
+    if (figures.empty()) return 0;
+    if (!id.empty()) {
+        const auto selected = std::find_if(figures.begin(), figures.end(), [&](const Figure *figure) {
+            return figure->id == id;
+        });
+        if (selected != figures.end()) return static_cast<std::size_t>(selected - figures.begin());
+    }
+    return std::min(index, figures.size() - 1);
+}
+
+std::string selected_favourite_id()
+{
+    return ui.item < ui.favourites.size() ? ui.favourites[ui.item]->id : std::string{};
+}
+
+Screen browser_root()
+{
+    return ui.grouping == Grouping::Favourites ? Screen::Favourites : Screen::Groups;
+}
+
 void rebuild_groups()
 {
     ui.game_usages.clear();
+    ui.results.clear();
+    ui.favourites.clear();
+    ui.groups.clear();
+    ui.editing_search = false;
+    ui.screen = browser_root();
+    ui.group = ui.platform_game = ui.item = ui.first = 0;
+    if (ui.screen == Screen::Favourites) {
+        rebuild_favourites();
+        return;
+    }
     std::map<std::string, Group> groups;
     std::map<std::pair<std::string, std::string>, Group> platform_games;
     for (const auto &figure : ui.catalog.figures) {
@@ -397,14 +508,11 @@ void rebuild_groups()
         sort_group(game);
         groups.at(key.first).games.push_back(std::move(game));
     }
-    ui.groups.clear();
     for (auto &[name, group] : groups) {
         if (group.figures.empty()) continue;
         sort_group(group);
         ui.groups.push_back(std::move(group));
     }
-    ui.screen = Screen::Groups;
-    ui.group = ui.platform_game = ui.item = ui.first = 0;
 }
 
 const Group &current_figure_group()
@@ -426,7 +534,9 @@ bool using_search_results()
 
 const std::vector<const Figure *> &figure_list()
 {
-    return using_search_results() ? ui.results : current_figure_group().figures;
+    if (using_search_results()) return ui.results;
+    if (ui.grouping == Grouping::Favourites) return ui.favourites;
+    return current_figure_group().figures;
 }
 
 std::size_t &figure_selection()
@@ -454,23 +564,29 @@ void filter_search()
     std::vector<std::string> terms;
     for (std::string term; input >> term;) terms.push_back(term);
 
+    const auto matches = [&](const Figure &figure) {
+        if (terms.empty()) return true;
+        const auto key = search_key(figure.name + " " + figure.series + " " + figure.franchise +
+                                    " " + local_backup_note(figure));
+        return std::all_of(terms.begin(), terms.end(), [&](const auto &term) {
+            return key.find(term) != std::string::npos;
+        });
+    };
     ui.results.clear();
-    for (const auto &figure : ui.catalog.figures) {
-        if (ui.owned && figure.backups.empty()) continue;
-        if (!terms.empty()) {
-            const auto key = search_key(figure.name + " " + figure.series + " " + figure.franchise +
-                                        " " + local_backup_note(figure));
-            if (!std::all_of(terms.begin(), terms.end(), [&](const auto &term) {
-                return key.find(term) != std::string::npos;
-            })) continue;
+    if (ui.grouping == Grouping::Favourites) {
+        for (const auto *figure : ui.favourites) {
+            if (matches(*figure)) ui.results.push_back(figure);
         }
-        ui.results.push_back(&figure);
+    } else {
+        for (const auto &figure : ui.catalog.figures) {
+            if ((!ui.owned || !figure.backups.empty()) && matches(figure)) ui.results.push_back(&figure);
+        }
+        std::sort(ui.results.begin(), ui.results.end(), [](const Figure *a, const Figure *b) {
+            if (a->name != b->name) return a->name < b->name;
+            if (a->series != b->series) return a->series < b->series;
+            return a->id < b->id;
+        });
     }
-    std::sort(ui.results.begin(), ui.results.end(), [](const Figure *a, const Figure *b) {
-        if (a->name != b->name) return a->name < b->name;
-        if (a->series != b->series) return a->series < b->series;
-        return a->id < b->id;
-    });
     ui.search_item = ui.search_first = 0;
 }
 
@@ -495,50 +611,78 @@ std::string count_label(std::size_t count, const char *singular, const char *plu
     return std::to_string(count) + " " + (count == 1 ? singular : plural);
 }
 
+std::string figure_subtitle(const Figure &figure)
+{
+    std::set<std::string_view> games;
+    for (const auto &usage : figure.games) {
+        if (!usage.name.empty() && !usage.effect.empty() && usage.effect != "No effect recorded.") {
+            games.insert(usage.name);
+        }
+    }
+    if (games.empty()) return local_backup_note(figure);
+    if (games.size() == 1) return std::string(*games.begin());
+    return count_label(games.size(), "game", "games");
+}
+
+const char *favourite_action(const Figure &figure)
+{
+    return is_favourite(figure) ? "V Unfavourite" : "V Favourite";
+}
+
 bool nfc_needs_retry(NfcState state)
 {
     return state != NFC_READY && state != NFC_UNAVAILABLE && state != NFC_CHECKING &&
         state != NFC_STARTING && state != NFC_PRESENTING && state != NFC_STOPPING;
 }
 
-void draw_browser_footer()
+void draw_browser_footer(const Figure *figure)
 {
+    std::string controls;
     if (ui.screen == Screen::Search) {
-        lv_label_set_text(ui.footer, ui.editing_search ? "Enter Search  Esc Back"
-            : ui.results.empty() ? "Esc Back" : "F/X Move  Enter Open  Esc Back");
-        return;
+        if (ui.editing_search) controls = "Enter Search  Esc Back";
+        else if (figure) controls = std::string("Enter Open  ") + favourite_action(*figure) + "  Esc Back";
+        else controls = "Esc Back";
+    } else {
+        controls = ui.catalog.updated.empty() ? "S Search  G Group  T Rescan" : "S Search  G Group  Tab View";
+        controls += "  ";
+        controls += figure ? favourite_action(*figure) : "U Settings";
     }
-    lv_label_set_text(ui.footer, ui.catalog.updated.empty() ? "S Search  G Group  T Rescan  U Settings"
-                                                           : "S Search  G Group  Tab View  U Settings");
+    lv_label_set_text(ui.footer, controls.c_str());
 }
 
 void draw_browser(bool animate, bool change_view = false)
 {
     const bool search = ui.screen == Screen::Search;
-    const bool list_figures = search || ui.screen == Screen::Figures;
+    const bool favourites = ui.screen == Screen::Favourites;
+    const bool flat = ui.grouping == Grouping::Favourites;
+    const bool miniatures = ui.show_miniatures && !flat;
+    const bool list_figures = search || favourites || ui.screen == Screen::Figures;
     const bool platform_games = ui.screen == Screen::PlatformGames;
     const auto &groups = platform_games ? ui.groups[ui.group].games : ui.groups;
     const std::size_t selected = list_figures ? figure_selection() : platform_games ? ui.platform_game : ui.group;
     const std::size_t count = list_figures ? figure_list().size() : groups.size();
     auto &first = search ? ui.search_first : ui.first;
     const auto old_first = first;
+    if (flat) first = std::min(first, count > row_count ? count - row_count : 0);
     if (selected < first) first = selected;
     else if (selected >= first + row_count) first = selected - row_count + 1;
 
     visible(ui.activity, false);
     visible(ui.browse, true);
-    visible(ui.hero, ui.show_miniatures);
-    visible(ui.empty_list, !ui.show_miniatures && count == 0);
-    lv_obj_set_width(ui.selection_box, ui.show_miniatures ? 158 : 297);
+    visible(ui.hero, miniatures);
+    visible(ui.empty_list, !miniatures && count == 0);
+    visible(ui.empty_hint, favourites && count == 0);
+    lv_obj_set_width(ui.selection_box, miniatures ? 158 : 297);
     visible(ui.selection_box, count > 0 && !ui.editing_search);
     lv_label_set_text(ui.view, ui.owned ? "LIBRARY" : "CATALOG");
-    draw_browser_footer();
+    const Figure *figure = list_figures && count ? figure_list()[selected] : nullptr;
+    draw_browser_footer(figure);
 
     const char *heading = "AMIIBO SERIES";
     if (ui.grouping == Grouping::Franchise) heading = "GAME FRANCHISES";
     if (ui.grouping == Grouping::Platform) heading = "PLATFORMS";
-    const std::string section = search ? search_heading() : list_figures ? current_figure_group().name :
-        platform_games ? ui.groups[ui.group].name : heading;
+    const std::string section = search ? search_heading() : favourites ? "FAVOURITES" :
+        list_figures ? current_figure_group().name : platform_games ? ui.groups[ui.group].name : heading;
     lv_label_set_text(ui.section, section.c_str());
     if (count) {
         lv_obj_update_layout(ui.selection_box);
@@ -551,55 +695,61 @@ void draw_browser(bool animate, bool change_view = false)
         auto &row = ui.rows[i];
         const auto index = first + i;
         const bool show = index < count;
-        visible(row.badge, show && ui.show_miniatures);
+        visible(row.badge, show && miniatures);
         visible(row.title, show);
-        visible(row.note, show);
+        const Figure *entry_figure = show && list_figures ? figure_list()[index] : nullptr;
+        const bool marked = entry_figure && !miniatures && !flat && is_favourite(*entry_figure);
+        const bool backed = entry_figure && !miniatures && !flat && !entry_figure->backups.empty();
+        visible(row.heart, marked);
+        visible(row.check, backed);
+        visible(row.note, show && !flat);
         if (!show) continue;
 
-        const Figure *figure = list_figures ? figure_list()[index] : nullptr;
-        const auto &group = figure ? group_name(*figure) : groups[index].name;
-        const auto &name = figure ? figure->name : group;
-        lv_obj_set_x(row.title, ui.show_miniatures ? 46 : 16);
-        lv_obj_set_x(row.note, ui.show_miniatures ? 46 : 16);
-        lv_obj_set_width(row.title, ui.show_miniatures ? 118 : 285);
-        lv_obj_set_width(row.note, ui.show_miniatures ? 117 : 285);
+        const auto &group = entry_figure ? group_name(*entry_figure) : groups[index].name;
+        const auto &name = entry_figure ? entry_figure->name : group;
+        lv_obj_set_x(row.title, miniatures ? 46 : 16);
+        lv_obj_set_x(row.note, miniatures ? 46 : 16);
+        lv_obj_set_width(row.title, miniatures ? 118 : marked ? 251 : backed ? 269 : 285);
+        lv_obj_set_width(row.note, miniatures ? 117 : 285);
         lv_label_set_text(row.title, name.c_str());
         std::string note;
-        if (figure && figure->type == "Raw NFC tag") {
-            note = local_backup_note(*figure);
-        } else if (search) {
-            note = figure->series;
-        } else if (figure && ui.grouping == Grouping::Platform) {
-            const auto use = std::find_if(figure->games.begin(), figure->games.end(), matches_platform_game);
-            if (use != figure->games.end()) note = use->effect;
-        } else if (figure) {
-            if (figure->type != "Figure") note = figure->type;
-            if (!figure->backups.empty()) note += note.empty() ? "Backed up" : "  /  Backed up";
-        } else {
+        if (!entry_figure) {
             const auto &entry = groups[index];
             note = entry.games.empty() ? count_label(entry.figures.size(), "entry", "entries") :
                                         count_label(entry.games.size(), "game", "games");
+        } else if (!flat) {
+            if (!search && ui.grouping == Grouping::Platform) {
+                const auto &games = entry_figure->games;
+                const auto use = std::find_if(games.begin(), games.end(), matches_platform_game);
+                if (use != games.end()) note = use->effect;
+            } else {
+                note = figure_subtitle(*entry_figure);
+            }
         }
+        lv_obj_set_y(row.title, row_start + row_step * static_cast<int>(i) + (note.empty() ? 6 : 1));
         lv_label_set_text(row.note, note.c_str());
-        if (!ui.show_miniatures) continue;
+        if (!miniatures) continue;
         lv_label_set_text(row.glyph, monogram(name).c_str());
         lv_obj_set_style_bg_color(row.badge, lv_color_hex(color_for(name)), 0);
-        show_art(row.image, row.glyph, group, figure, 20, 20);
+        show_art(row.image, row.glyph, group, entry_figure, 20, 20);
     }
 
     if (count == 0) {
         const bool platforms = !search && ui.grouping == Grouping::Platform;
-        lv_label_set_text(ui.empty_list, search ? "No matches" : platforms ? "No games listed" : "No backups yet");
+        lv_label_set_text(ui.empty_list, search ? "No matches" : favourites ? "No favourites in this view" :
+                          platforms ? "No games listed" : "No backups yet");
     }
-    if (!count || !ui.show_miniatures) {
+    if (!count || !miniatures) {
         ui.preview_artwork.clear();
         ui.preview_logo_failed = false;
     }
-    if (!ui.show_miniatures) return;
+    if (!miniatures) return;
 
     lv_obj_set_height(ui.art_stage, list_figures ? 65 : 53);
     lv_obj_set_y(ui.name, list_figures ? 74 : 62);
-    lv_obj_set_width(ui.name, list_figures ? 95 : 115);
+    const bool marked = figure && is_favourite(*figure);
+    visible(ui.preview_heart, marked);
+    lv_obj_set_width(ui.name, marked ? 78 : list_figures ? 95 : 115);
     visible(ui.detail, !list_figures || count == 0);
     if (count == 0) {
         lv_obj_set_height(ui.art_stage, 53);
@@ -620,7 +770,6 @@ void draw_browser(bool animate, bool change_view = false)
         return;
     }
 
-    const Figure *figure = list_figures ? figure_list()[selected] : nullptr;
     const auto &group = figure ? group_name(*figure) : groups[selected].name;
     const auto &name = figure ? figure->name : group;
     lv_label_set_text(ui.name, name.c_str());
@@ -800,14 +949,22 @@ void draw_nfc()
     lv_obj_set_style_text_color(ui.nfc_label,
         lv_color_hex(ui.nfc == NFC_READY || ui.nfc == NFC_PRESENTING ? mint : amber), 0);
     if (ui.screen != Screen::Figure) return;
-    const bool has_backup = !figure_list()[figure_selection()]->backups.empty();
+    const Figure &figure = *figure_list()[figure_selection()];
+    const bool has_backup = !figure.backups.empty();
     lv_label_set_text(ui.activity_detail, ui.nfc == NFC_READY && !has_backup ? "No saved backup" : labels.detail);
-    const char *controls = "F/X Browse  I Games  Esc Back";
-    if (ui.nfc == NFC_READY && has_backup) controls = "F/X Browse  I Games  Enter NFC  Esc Back";
-    else if (ui.nfc == NFC_STOPPING) controls = "Stopping NFC...";
+    std::string controls;
+    if (ui.nfc == NFC_STOPPING) controls = "Stopping NFC...";
     else if (presenting(ui.nfc)) controls = "Esc Stop";
-    else if (nfc_needs_retry(ui.nfc)) controls = "F/X Browse  I Games  R Retry  Esc Back";
-    lv_label_set_text(ui.footer, controls);
+    else if (ui.nfc == NFC_CHECKING) controls = "F/X Browse  I Games  Esc Back";
+    else {
+        controls = "I Games  ";
+        if (ui.nfc == NFC_READY && has_backup) controls += "Enter NFC  ";
+        else if (nfc_needs_retry(ui.nfc)) controls += "R Retry  ";
+        else controls = "F/X Browse  I Games  ";
+        controls += favourite_action(figure);
+        controls += "  Esc Back";
+    }
+    lv_label_set_text(ui.footer, controls.c_str());
 }
 
 void update_nfc(lv_timer_t *)
@@ -924,6 +1081,9 @@ void draw_figure_activity()
     const auto &caption = game_context ? current_figure_group().name : local_note.empty() ? figure.series : local_note;
     lv_label_set_text(ui.activity_caption, caption.c_str());
     lv_label_set_text(ui.activity_title, figure.name.c_str());
+    const bool marked = is_favourite(figure);
+    lv_obj_set_width(ui.activity_title, marked ? 137 : 155);
+    visible(ui.activity_heart, marked);
     lv_obj_set_style_bg_color(ui.activity_art, lv_color_hex(color_for(group)), 0);
     lv_label_set_text(ui.activity_glyph, monogram(figure.name).c_str());
     show_art(ui.activity_image, ui.activity_glyph, group, &figure, 104, 87);
@@ -967,6 +1127,100 @@ bool save_preferences()
     }
     fs::remove(temporary, error);
     return false;
+}
+
+bool load_favourites()
+{
+    const auto path = ui.profile / "favourites.txt";
+    std::error_code error;
+    const auto status = fs::symlink_status(path, error);
+    if (error == std::errc::no_such_file_or_directory || status.type() == fs::file_type::not_found) return true;
+    if (error || !fs::is_regular_file(status)) return false;
+
+    std::ifstream input(path);
+    if (!input) return false;
+    std::set<std::string> ids;
+    for (std::string id; std::getline(input, id);) {
+        if (!id.empty() && id.back() == '\r') id.pop_back();
+        id = ascii_lower(std::move(id));
+        if (id.size() == 16 && id.find_first_not_of("0123456789abcdef") == std::string::npos) {
+            ids.insert(std::move(id));
+        }
+    }
+    if (input.bad() || !input.eof()) return false;
+    ui.favourite_ids = std::move(ids);
+    return true;
+}
+
+bool save_favourites(const std::set<std::string> &ids)
+{
+    auto temporary = (ui.profile / ".favourites-XXXXXX").string();
+    const int fd = mkstemp(temporary.data());
+    if (fd < 0) return false;
+    FILE *file = fdopen(fd, "w");
+    bool complete = file != nullptr;
+    if (file) {
+        for (const auto &id : ids) {
+            if (std::fprintf(file, "%s\n", id.c_str()) < 0) {
+                complete = false;
+                break;
+            }
+        }
+        complete = std::fclose(file) == 0 && complete;
+    } else {
+        close(fd);
+    }
+    std::error_code error;
+    if (complete) {
+        fs::rename(temporary, ui.profile / "favourites.txt", error);
+        if (!error) return true;
+    }
+    fs::remove(temporary, error);
+    return false;
+}
+
+void hide_favourites_notice(lv_timer_t *timer)
+{
+    visible(ui.favourites_notice, false);
+    lv_timer_pause(timer);
+}
+
+void show_favourites_notice(const char *message)
+{
+    lv_label_set_text(ui.favourites_message, message);
+    visible(ui.favourites_notice, true);
+    lv_timer_reset(ui.favourites_notice_timer);
+    lv_timer_resume(ui.favourites_notice_timer);
+}
+
+void toggle_favourite()
+{
+    if (ui.nfc == NFC_CHECKING || presenting(ui.nfc) || figure_list().empty()) return;
+    const std::string id = figure_list()[figure_selection()]->id;
+    auto updated = ui.favourite_ids;
+    if (!updated.erase(id)) updated.insert(id);
+    if (!ui.favourites_loaded || !save_favourites(updated)) {
+        show_favourites_notice("Could not save favourites");
+        return;
+    }
+    ui.favourite_ids = std::move(updated);
+    hide_favourites_notice(ui.favourites_notice_timer);
+
+    if (ui.grouping == Grouping::Favourites) {
+        const auto selected = selected_favourite_id();
+        rebuild_favourites();
+        ui.item = restored_selection(ui.favourites, selected, ui.item);
+        if (using_search_results()) {
+            const auto index = ui.search_item;
+            const auto first = ui.search_first;
+            filter_search();
+            ui.search_item = restored_selection(ui.results, id, index);
+            ui.search_first = first;
+        }
+        if (ui.screen == Screen::Figure) ui.screen = ui.return_to;
+    }
+    if (ui.screen == Screen::Figure) draw_figure_activity();
+    else draw_browser(false);
 }
 
 void draw_settings()
@@ -1141,6 +1395,7 @@ void draw_activity(Screen screen)
     const bool is_figure = screen == Screen::Figure;
     lv_label_set_text(ui.footer, is_figure ? "F/X Browse  Esc Back" : "Esc Back");
     visible(ui.activity_art, is_figure);
+    visible(ui.activity_heart, false);
     visible(ui.activity_badge, screen == Screen::Settings || screen == Screen::Welcome);
     const bool settings = screen == Screen::Settings;
     lv_obj_set_height(ui.activity, settings ? 104 : 98);
@@ -1193,10 +1448,14 @@ bool refresh()
         std::fprintf(stderr, "Library: %zu matched, %zu unidentified, %zu skipped%s\n",
                      fresh.matched, fresh.unknown, fresh.skipped, fresh.scan_error ? " (scan incomplete)" : "");
     }
+    const auto selected = selected_favourite_id();
+    const auto index = ui.item;
     ui.catalog = std::move(fresh);
     ui.unindexed_logos.clear();
     ui.preview_logo_failed = false;
     ui.owned = true;
+    rebuild_groups();
+    if (ui.screen == Screen::Favourites) ui.item = restored_selection(ui.favourites, selected, index);
     return true;
 }
 
@@ -1222,12 +1481,11 @@ void poll_catalog_sync(lv_timer_t *)
     if (finished == 0 || (finished < 0 && errno == EINTR)) return;
     ui.sync_pid = 0;
     const int result = finished > 0 && WIFEXITED(status) ? WEXITSTATUS(status) : -1;
-    if (result == 0 && refresh() && !ui.catalog.updated.empty()) {
-        const Screen screen = ui.screen;
-        rebuild_groups();
+    const Screen screen = ui.screen;
+    if (result == 0 && refresh()) {
+        ui.return_to = ui.screen;
         ui.screen = screen;
-        ui.return_to = Screen::Groups;
-        ui.sync_status = "Catalog ready offline";
+        ui.sync_status = ui.catalog.updated.empty() ? "Sync failed. Check connection" : "Catalog ready offline";
     } else if (result == 3) {
         ui.sync_status = "Catalog is up to date";
     } else {
@@ -1257,9 +1515,9 @@ bool studio_init(const char *profile, const char *share, const char *backups, co
     ui.downloaded_artwork = ui.profile / "downloaded-artwork";
     ui.downloaded_logos = ui.profile / "downloaded-logos";
     load_preferences();
+    ui.favourites_loaded = load_favourites();
     if (!refresh()) return false;
     const bool setup_required = ui.catalog.updated.empty() && !regular(ui.profile / "local-only");
-    rebuild_groups();
 
     lv_obj_t *root = lv_screen_active();
     lv_obj_remove_style_all(root);
@@ -1289,6 +1547,8 @@ bool studio_init(const char *profile, const char *share, const char *backups, co
     lv_obj_set_style_bg_opa(ui.browse, LV_OPA_TRANSP, 0);
     ui.section = short_label(ui.browse, 14, 37, section_width, &lv_font_montserrat_12, muted);
     ui.empty_list = short_label(ui.browse, 16, 58, 282, &lv_font_montserrat_12, muted);
+    ui.empty_hint = short_label(ui.browse, 16, 78, 282, &lv_font_montserrat_12, muted);
+    lv_label_set_text(ui.empty_hint, "G to browse, V to favourite a figure");
     ui.selection_box = box(ui.browse, 11, row_start, 158, 27, selection, 6);
     for (std::size_t i = 0; i < row_count; ++i) {
         auto &row = ui.rows[i];
@@ -1299,6 +1559,8 @@ bool studio_init(const char *profile, const char *share, const char *backups, co
         row.image = lv_image_create(row.badge);
         row.title = short_label(ui.browse, 46, y + 1, 118, &lv_font_montserrat_12, ink);
         row.note = short_label(ui.browse, 46, y + 14, 117, &lv_font_montserrat_12, muted);
+        row.heart = heart(ui.browse, 272, y + 5);
+        row.check = label(ui.browse, 290, y + 4, LV_SYMBOL_OK, &lv_font_montserrat_12, mint);
     }
 
     ui.hero = box(ui.browse, 177, 42, 131, 98, panel, 9);
@@ -1313,11 +1575,13 @@ bool studio_init(const char *profile, const char *share, const char *backups, co
     ui.art_check = label(ui.art_status, 0, 0, LV_SYMBOL_OK, &lv_font_montserrat_12, background);
     lv_obj_center(ui.art_check);
     ui.name = short_label(ui.hero, 8, 62, 115, &lv_font_montserrat_12, ink);
+    ui.preview_heart = heart(ui.hero, 89, 76);
     ui.detail = short_label(ui.hero, 8, 79, 115, &lv_font_montserrat_12, muted);
 
     ui.activity = box(root, 12, 42, 296, 98, panel, 8);
     ui.activity_caption = short_label(ui.activity, 12, 8, 272, &lv_font_montserrat_12, mint);
     ui.activity_title = short_label(ui.activity, 12, 23, 272, &lv_font_montserrat_24, ink);
+    ui.activity_heart = heart(ui.activity, 153, 27);
     ui.activity_detail = short_label(ui.activity, 12, 55, 272, &lv_font_montserrat_12, muted);
     ui.activity_badge = short_label(ui.activity, 12, 77, 272, &lv_font_montserrat_12, amber);
     ui.activity_option = short_label(ui.activity, 12, 81, 272, &lv_font_montserrat_12, muted);
@@ -1341,8 +1605,13 @@ bool studio_init(const char *profile, const char *share, const char *backups, co
     lv_obj_center(ui.activity_check);
     box(root, 12, 147, 296, 1, line, 0);
     ui.footer = short_label(root, 12, 152, 296, &lv_font_montserrat_12, ink);
+    ui.favourites_notice = box(root, 12, 150, 296, 20, background, 0);
+    ui.favourites_message = short_label(ui.favourites_notice, 0, 2, 296, &lv_font_montserrat_12, amber);
+    ui.favourites_notice_timer = lv_timer_create(hide_favourites_notice, 3500, nullptr);
+    hide_favourites_notice(ui.favourites_notice_timer);
     if (setup_required) draw_activity(Screen::Welcome);
     else draw_browser(false);
+    if (!ui.favourites_loaded) show_favourites_notice("Could not load favourites");
     nfc_probe();
     update_nfc(nullptr);
     lv_timer_create(update_nfc, 80, nullptr);
@@ -1436,9 +1705,8 @@ bool studio_input(StudioInput input)
             start_catalog_sync();
         } else if (input == STUDIO_SELECT && ui.settings_item == 1) {
             if (refresh()) {
-                rebuild_groups();
+                if (ui.return_to != Screen::Welcome) ui.return_to = ui.screen;
                 ui.screen = Screen::Settings;
-                if (ui.return_to != Screen::Welcome) ui.return_to = Screen::Groups;
                 ui.sync_status = ui.catalog.scan_error ? "Check local backup folder" : "Local backups rescanned";
             } else {
                 ui.sync_status = "Could not read the local catalog";
@@ -1477,7 +1745,8 @@ bool studio_input(StudioInput input)
     }
     const bool groups = ui.screen == Screen::Groups;
     const bool platform_games = ui.screen == Screen::PlatformGames;
-    const bool figures = ui.screen == Screen::Figures;
+    const bool favourites = ui.screen == Screen::Favourites;
+    const bool figures = ui.screen == Screen::Figures || favourites;
     const bool search = ui.screen == Screen::Search;
     const bool viewing_figure = ui.screen == Screen::Figure;
     if (search && input != STUDIO_BACK) {
@@ -1488,7 +1757,9 @@ bool studio_input(StudioInput input)
             }
             return true;
         }
-        if (input != STUDIO_UP && input != STUDIO_DOWN && input != STUDIO_SELECT) return true;
+        if (input != STUDIO_UP && input != STUDIO_DOWN && input != STUDIO_SELECT && input != STUDIO_FAVOURITE) {
+            return true;
+        }
     }
     if (!groups && !platform_games && !figures && !search) {
         if (viewing_figure && presenting(ui.nfc)) {
@@ -1520,7 +1791,9 @@ bool studio_input(StudioInput input)
             update_nfc(nullptr);
             return true;
         }
-        if (!viewing_figure || (input != STUDIO_UP && input != STUDIO_DOWN)) return true;
+        if (!viewing_figure || (input != STUDIO_UP && input != STUDIO_DOWN && input != STUDIO_FAVOURITE)) {
+            return true;
+        }
     }
 
     switch (input) {
@@ -1551,7 +1824,7 @@ bool studio_input(StudioInput input)
         }
         break;
     case STUDIO_BACK:
-        if (groups) return false;
+        if (groups || favourites) return false;
         if (search) {
             ui.screen = ui.search_origin;
             ui.editing_search = false;
@@ -1564,19 +1837,32 @@ bool studio_input(StudioInput input)
         draw_browser(false, true);
         break;
     case STUDIO_VIEW:
-    case STUDIO_GROUP:
-    case STUDIO_REFRESH:
-        if (input == STUDIO_VIEW && !ui.catalog.updated.empty()) ui.owned = !ui.owned;
-        if (input == STUDIO_GROUP) {
-            switch (ui.grouping) {
-            case Grouping::Series: ui.grouping = Grouping::Franchise; break;
-            case Grouping::Franchise: ui.grouping = Grouping::Platform; break;
-            case Grouping::Platform: ui.grouping = Grouping::Series; break;
-            }
+        if (ui.catalog.updated.empty()) break;
+        ui.owned = !ui.owned;
+        if (favourites) {
+            const auto selected = selected_favourite_id();
+            rebuild_favourites();
+            ui.item = restored_selection(ui.favourites, selected, ui.item);
+        } else {
+            rebuild_groups();
         }
-        if (input == STUDIO_REFRESH && !refresh()) break;
+        draw_browser(false, true);
+        break;
+    case STUDIO_GROUP:
+        switch (ui.grouping) {
+        case Grouping::Series: ui.grouping = Grouping::Franchise; break;
+        case Grouping::Franchise: ui.grouping = Grouping::Platform; break;
+        case Grouping::Platform: ui.grouping = Grouping::Favourites; break;
+        case Grouping::Favourites: ui.grouping = Grouping::Series; break;
+        }
         rebuild_groups();
         draw_browser(false, true);
+        break;
+    case STUDIO_REFRESH:
+        if (refresh()) draw_browser(false, true);
+        break;
+    case STUDIO_FAVOURITE:
+        if (figures || search || viewing_figure) toggle_favourite();
         break;
     case STUDIO_SETTINGS:
         show_activity(Screen::Settings);

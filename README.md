@@ -2,13 +2,25 @@
 
 Ziiro is an amiibo catalog and backup library for the M5Stack Cardputer Zero. Browse figures by series, game franchise, or console, see recorded game effects, and find backups you already have. Optional NFC presentation uses the U219 Cap.
 
+## Changelog
+
+### 1.1.0
+
+- Added Favourites. Press **V** to mark or unmark an amiibo and **G** to cycle to the alphabetical list. **Tab** switches between Library and Catalog within Favourites.
+- Added hearts for favourite amiibos and checkmarks for local backups in full-width rows. Favourites are saved by model ID and survive rescans and restarts.
+- Figure rows show the title of a single game with a recorded unlock or a count for several games. The platform and game view shows the selected game’s effect.
+
+### 1.0.0
+
+- First Store release with an offline amiibo catalog, a local backup library, and optional NFC presentation.
+
 ## How to use Ziiro
 
 The screenshots show the desktop preview at the Zero’s native 320 × 170 resolution.
 
 ### Set up your library
 
-1. For the 1.0 release package, see [device setup](DEVICE.md). After installation, open **Ziiro** from HOME.
+1. See [device setup](DEVICE.md) for installation, then open **Ziiro** from HOME.
 2. Choose **Download catalog** to fetch amiibo metadata over Wi-Fi, or **Use local backups** to start offline.
 3. Put your own raw 540-byte NTAG215 `.bin` backups in `~/ziiro/amiibo_data/` on the Zero. Subfolders are supported. Press **T** to rescan.
 
@@ -24,6 +36,8 @@ The screenshots show the desktop preview at the Zero’s native 320 × 170 resol
 
 Open a figure and press **I** to see its recorded game effects. Use **F/X** to browse the entries.
 
+Favourites is a flat alphabetical list. In Library it shows favourited amiibos with local backups. In Catalog it shows all available favourites. Search within Favourites covers the current scope.
+
 ![A game compatibility entry showing the console, game title, and effect](docs/screenshots/compatibility.png)
 
 | Key | Action |
@@ -31,7 +45,8 @@ Open a figure and press **I** to see its recorded game effects. Use **F/X** to b
 | **F/X** or **Up/Down** | Move through lists and settings |
 | **Enter**, **Esc** | Open or confirm, go back or leave the app |
 | **Tab** | Switch between Library and Catalog |
-| **G** | Cycle through series, game franchises, and consoles |
+| **G** | Cycle through series, game franchises, consoles, and favourites |
+| **V** | Mark or unmark an amiibo in a list, confirmed search results, or figure details |
 | **S** | Type a search and press **Enter** to confirm. Select a result and press **Enter** to open it. |
 | **I** | Show recorded compatible games and effects for a figure |
 | **T**, **U** | Rescan backups, open Settings |
